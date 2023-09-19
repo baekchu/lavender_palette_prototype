@@ -1,0 +1,79 @@
+.shopContent {
+
+    .shopContentBox {
+        position: relative;
+        display: inline-block;
+
+        .contentImg {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            display: block;
+        }
+
+        .hoverBtns {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            gap: 3px;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Add some background */
+            border-radius: 8px 0px 0px 0px;
+            padding-left: 3px;
+            padding-top: 3px;
+        }
+
+        .hoverBtn {
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .hoverBtn:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .shopContentInfo {
+        background-color: white;
+        margin-top: -4px;
+        width: 100%;
+        max-width: 300px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .profile {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 7px;
+            background-color: #B25FF3;
+            padding: 0px 2px;
+            padding-right: 7px;
+            border-radius: 0px 17px 18px 0px;
+            width: fit-content;
+            white-space: nowrap;
+
+            .profileImg {
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                margin-left: 2px;
+            }
+
+            .profileNick {
+                font-weight: 700;
+            }
+        }
+
+        .artworkTitle {
+            margin-left: 5px;
+            background-color: gray;
+        }
+    }
+}

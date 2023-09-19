@@ -1,0 +1,363 @@
+/* ShopRecommendDisplay.css */
+.recommendArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  width: 100%;
+  padding: 8px 0px;
+
+  .displayInfo {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    max-width: 600px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: white;
+    gap: 3px;
+    margin: 7px;
+    padding: 3px;
+    box-shadow: 0 0 .2rem #fff, 0 0 .2rem #fff, 0 0 2rem #B25FF3, inset 0 0 0.2rem #B25FF3;
+
+    .divFirst {
+      width: 40%;
+      display: flex;
+      flex-direction: row;
+
+      .infoLeft {
+        width: 100%;
+
+        .leftTop {
+          border-radius: 5px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-end;
+          margin: 0px 7px;
+          height: 30%;
+
+          .title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #B25FF3;
+            text-shadow: 0 0 0.07rem #B25FF3;
+          }
+
+          .author {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            gap: 5px;
+            color: gray;
+
+            .authorImg {
+              width: 28px;
+              height: 28px;
+              border-radius: 50%;
+            }
+          }
+        }
+
+        .leftBot {
+          height: 60%;
+          margin: 5px 7px;
+          overflow: auto;
+          white-space: wrap;
+          font-size: 14px;
+
+          &::-webkit-scrollbar {
+            width: 9px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: #be9ada;
+            border-radius: 10px;
+            background-clip: padding-box;
+            border: 2px solid transparent;
+          }
+
+          &::-webkit-scrollbar-track {
+            background-color: lightgray;
+            border-radius: 10px;
+            box-shadow: inset 0px 0px 5px white;
+          }
+        }
+      }
+    }
+
+    .divSecond {
+      width: 60%;
+      display: flex;
+      flex-direction: row;
+
+      .infoMid {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+
+        .price {
+          display: flex;
+          justify-content: flex-end;
+          width: 100%;
+          border-bottom: 2px solid lightgray;
+          color: #B25FF3;
+          font-weight: 700;
+          font-size: 17px;
+          padding-bottom: 5px;
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+
+          .lineBox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .sTitle {
+              width: 25%;
+              color: gray;
+            }
+
+            .sInfo {
+              display: flex;
+              justify-content: flex-end;
+              width: 75%;
+              font-size: 14px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+
+      .infoRight {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+
+        .navBtns {
+          display: flex;
+          flex-direction: row;
+          margin: 2px;
+          justify-content: space-between;
+          height: fit-content;
+
+          .btn {
+            width: 34px;
+            height: 34px;
+          }
+        }
+
+        .leftTime {
+          display: flex;
+          justify-content: center;
+          height: fit-content;
+          font-size: 14px;
+          height: 18px;
+          padding: 1px 0px;
+        }
+
+        .modal {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 40%;
+
+          .modalOpen {
+            margin: 5px;
+            width: 100%;
+            height: 35px;
+            border: none;
+            background-color: #B25FF3;
+            cursor: pointer;
+            color: white;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 700;
+
+            &:hover {
+              background-color: #442F55;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.lightImg {
+  width: 100px;
+  height: 65px;
+  object-fit: cover;
+  margin-top: -15px;
+  margin-bottom: -30px;
+  filter: brightness(0.7);
+}
+
+.reqDisplay {
+  width: 1300px;
+  height: 500px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+
+  .focus {
+    position: absolute;
+    width: 1300px;
+    height: 500px;
+    z-index: 10;
+    background: radial-gradient(circle 465px at center,
+        transparent 0%,
+        rgba(0, 0, 0, 0.2) 70%,
+        rgba(0, 0, 0, 1) 100%);
+    pointer-events: none;
+  }
+
+  .mySwiper {
+    width: 90%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .custom-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      background-color: #ffffff;
+      margin: 0 5px;
+      border-radius: 50%;
+
+      /* 페이지 번호 클릭 시 색상 변경 */
+      &.swiper-pagination-bullet-active {
+        background-color: #B25FF3;
+        /* 원하는 활성 상태 색상으로 변경 */
+      }
+    }
+  }
+
+  .swiper-slide {
+    width: fit-content;
+    min-width: 300px;
+    height: fit-content;
+    margin: auto 0px;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+
+    .swiperImg {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain;
+    }
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 8px 18px 8px rgba(255, 255, 255, 0.28);
+    -webkit-box-shadow: 0px 8px 18px 8px rgba(255, 255, 255, 0.28);
+    -moz-box-shadow: 0px 8px 18px 8px rgba(255, 255, 255, 0.28);
+  }
+
+}
+
+@media screen and (max-width: 1300px) {
+  .reqDisplay {
+    max-width: 1000px;
+
+    .focus {
+      width: 1000px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .reqDisplay {
+    width: 100%;
+    max-width: 700px;
+
+    .swiperImg {
+      max-width: 400px;
+      height: auto;
+      max-height: 300px;
+      object-fit: contain;
+    }
+
+    .focus {
+      width: 100%;
+      max-width: 700px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .recommendArea {
+    .displayInfo {
+      height: fit-content;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .divFirst {
+        margin-top: 5px;
+        width: 99%;
+
+        .infoLeft {
+          .leftBot {
+            height: fit-content;
+            max-height: 60px;
+          }
+        }
+      }
+
+      .divSecond {
+        width: 99%;
+        justify-content: space-around;
+
+        .infoMid {
+          width: 60%;
+        }
+
+        .infoRight {
+          width: 25%;
+          min-width: fit-content;
+        }
+
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .reqDisplay {
+    width: 100%;
+    height: fit-content;
+
+    .swiper-slide {
+      .swiperImg {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        max-height: 300px;
+        object-fit: contain;
+      }
+    }
+
+  }
+
+}

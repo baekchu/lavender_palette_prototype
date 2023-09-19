@@ -1,0 +1,86 @@
+.RecBox {
+  display: flex;
+  flex-direction: row;
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+  max-width: 1300px;
+  height: 700px;
+  /*height: fit-content;*/
+}
+
+.RecItem {
+  width: 25%;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 14px;
+  text-indent: 4px;
+
+  font-size: 22px;
+  transition: all 0.6s ease-in-out;
+
+  .ItemImg {
+    width: 100%;
+    max-width: fit-content;
+    height: auto;
+    max-height: 65%;
+    margin: 0px auto;
+  }
+
+  .Artist {
+    margin-left: 5px;
+    font-size: 18px;
+    transition: opacity 0.1s ease-in-out;
+    opacity: 0;
+  }
+
+  .Description {
+    font-size: 14px;
+    transition: opacity 0.1s ease-in-out;
+    opacity: 0;
+  }
+}
+
+.RecItem:nth-child(even) {
+  flex-direction: column-reverse;
+  justify-content: end;
+}
+
+.RecItem.hovered {
+  width: 60%;
+  font-size: 42px;
+
+  .Artist {
+    transition: opacity 0.45s ease-in-out 0.5s;
+    opacity: 1;
+  }
+
+  .Description {
+    transition: opacity 0.45s ease-in-out 1s;
+    opacity: 1;
+  }
+}
+
+.RecItem.hovered~.RecItem {
+  width: 20%;
+  font-size: 18px;
+}
+
+
+@media screen and (max-width: 1300px) {
+  .RecBox {
+    width: 100%;
+    max-width: 1000px;
+    height: fit-content;
+    min-height: 450px;
+
+    .ItemImg {
+      width: 100%;
+      max-width: fit-content;
+      height: auto;
+      margin: 0px auto;
+    }
+  }
+}

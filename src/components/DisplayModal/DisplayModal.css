@@ -1,0 +1,780 @@
+.displayModal {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    overflow: hidden;
+
+    .modalCloseBtn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        border: none;
+        background-color: transparent;
+        color: rgb(87, 87, 87);
+        cursor: pointer;
+    }
+
+    .modalBox {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        width: 98%;
+        max-width: 1400px;
+        height: 94%;
+        background-color: #EADDF3;
+        border-radius: 12px 12px 0 0;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0 4px;
+        gap: 3px;
+
+        .leftBox {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .leftInner {
+                width: 99%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                .leftTop {
+                    width: 100%;
+                    height: 7%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-end;
+                    justify-content: space-between;
+                    margin-top: 6px;
+
+                    .LTleft {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 7px;
+                        margin: auto 0;
+                        margin-left: 7px;
+
+                        .authorImg {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            cursor: pointer;
+                        }
+
+                        .authorName {
+                            font-weight: bold;
+                            cursor: pointer;
+                        }
+
+                        .authorFollow {
+                            color: #B25FF3;
+                            border: none;
+                            background-color: transparent;
+                            cursor: pointer;
+
+                            &.selected {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+
+                    .LTright {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 7px;
+                        margin: auto 0;
+
+                        .btn {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            gap: 4px;
+                            font-size: 12px;
+                            cursor: pointer;
+                            background-color: white;
+                            border: none;
+                            padding: 3px 10px;
+                            border-radius: 17px;
+
+                            &:hover {
+                                background-color: lightgray;
+                            }
+
+                            &.selected {
+                                color: #B25FF3;
+                            }
+
+                            &.close {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                .leftMid {
+                    width: 100%;
+                    height: 70%;
+                    background-color: transparent;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+
+                    .backImgDiv {
+                        width: 95%;
+                        height: 95%;
+                        position: absolute;
+                        overflow: hidden;
+
+                        .backImg {
+                            width: 100%;
+                            height: 100%;
+
+                            filter: blur(5px);
+                            filter: brightness(0.5);
+                            opacity: 0.6;
+
+                            object-fit: cover;
+                        }
+                    }
+
+                    .imgBox {
+                        z-index: 2;
+                        width: 95%;
+                        height: 95%;
+
+                        .showingImg {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                }
+
+                .leftBot {
+                    width: 100%;
+                    height: 20%;
+
+                    .innerDisplay {
+                        background-color: white;
+                        border-radius: 7px;
+                        height: 90%;
+                        width: 95%;
+                        margin: auto;
+                    }
+
+                    /* 하단 이미지 슬라이더 모듈 */
+                    .imgSlideBox {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        width: auto;
+                        max-height: 100%;
+                        overflow: hidden;
+
+                        .swiper-pagination {
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        
+                        .swiper-pagination-bullet {
+                            width: 10px;
+                            height: 6px;
+                            background-color: white;
+                            border-radius: 3px;
+                            opacity: 1;
+                            transition: background-color 0.3s;
+                            margin: 0 5px; /* 페이지네이션 간격 조절 */
+                        }
+                        
+                        .swiper-pagination-bullet-active {
+                            background-color: #B25FF3;
+                        }
+                    }
+
+                    .imgSlideBox .swiper-container {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        max-height: 100%;
+                        /* 최대 높이를 innerDisplay의 90%로 제한 */
+                    }
+
+                    .imgSlideBox .swiperContent .slideImg {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    .imgSlideBox .prevBtn,
+                    .imgSlideBox .nextBtn {
+                        z-index: 20;
+                        position: absolute;
+                        width: 30px;
+                        height: 30px;
+                        margin: auto;
+                        background-color: white;
+                        border-radius: 50%;
+                        color: #B25FF3;
+                        cursor: pointer;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.61);
+                        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.61);
+                        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.61);
+                    }
+
+                    .imgSlideBox .prevBtn {
+                        left: 0;
+                    }
+
+                    .imgSlideBox .nextBtn {
+                        right: 0;
+                    }
+                }
+            }
+        }
+
+        .rightBox {
+            background-color: white;
+            width: 20%;
+            max-width: 240px;
+            border-radius: 7px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin: 10px 0;
+            gap: 7px;
+
+            .rightTop {
+                width: 95%;
+                height: 15%;
+                max-height: 100px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 3px;
+
+                .topTop {
+                    font-size: 17px;
+                    width: 97%;
+                    height: 20px;
+                    font-weight: bold;
+
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+
+                .topMid {
+                    font-size: 13px;
+                    text-indent: 2px;
+
+                    overflow-x: hidden;
+                    overflow-y: auto;
+
+                    background-color: #EADDF3;
+                    border-radius: 5px;
+                    height: 50%;
+                    max-height: 45px;
+                    width: 97%;
+                    margin: auto;
+
+                    &::-webkit-scrollbar {
+                        width: 9px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: #be9ada;
+                        border-radius: 10px;
+                        background-clip: padding-box;
+                        border: 2px solid transparent;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background-color: lightgray;
+                        border-radius: 10px;
+                        box-shadow: inset 0px 0px 5px white;
+                    }
+                }
+
+                .topBot {
+                    width: 96%;
+                    font-size: 13px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 5px;
+                    margin: 0 3px;
+                    margin-top: 1px;
+
+                    overflow-x: auto;
+                    white-space: nowrap;
+
+                    &::-webkit-scrollbar {
+                        width: 0;
+                        height: 0;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: transparent;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background-color: transparent;
+                    }
+
+                    .tag {
+                        background-color: #B25FF3;
+                        color: white;
+                        padding: 1px 5px;
+                        border-radius: 12px;
+                    }
+                }
+            }
+
+            .rightMid {
+                background-color: #EADDF3;
+                border-radius: 5px;
+                width: 95%;
+                height: 17%;
+                padding: 5px 2px;
+                max-height: 65px;
+                gap: 7px;
+                overflow-x: auto;
+                overflow-y: hidden;
+
+                display: flex;
+                flex-direction: row;
+
+                &::-webkit-scrollbar {
+                    height: 8px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: #be9ada;
+                    border-radius: 10px;
+                    background-clip: padding-box;
+                    border: 2px solid transparent;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background-color: lightgray;
+                    border-radius: 10px;
+                    box-shadow: inset 0px 0px 5px white;
+                }
+
+                .btn {
+                    width: fit-content;
+                    min-width: 50px;
+                    height: 100%;
+                    border: none;
+                    border-radius: 7px;
+                    color: white;
+                    color: #B25FF3;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    white-space: nowrap;
+
+                    font-size: 11px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: lightgray;
+                    }
+                }
+            }
+
+            .rightBot {
+                background-color: #EADDF3;
+                width: 95%;
+                height: 65%;
+                font-size: 14px;
+                border-radius: 5px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .commentTitle {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: start;
+                    align-items: center;
+                    gap: 4px;
+
+                    .titleL {
+                        padding-left: 4px;
+                        font-weight: bold;
+                    }
+
+                    .commentCnts {
+                        font-size: 13px;
+                    }
+
+                    .openAddTab {
+                        background-color: transparent;
+                        border: none;
+                        margin-left: auto;
+                        margin-right: 7px;
+                        margin-top: 3px;
+
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+
+                        width: 27px;
+                        height: 27px;
+                        border-radius: 5px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: lightgray;
+                        }
+                    }
+                }
+
+                .commentBox {
+                    background-color: lightgray;
+                    width: 95%;
+                    height: 95%;
+                    border-radius: 7px;
+                    margin: 5px auto;
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 7px;
+
+                    overflow-y: auto;
+
+                    &::-webkit-scrollbar {
+                        width: 9px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: #be9ada;
+                        border-radius: 10px;
+                        background-clip: padding-box;
+                        border: 2px solid transparent;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background-color: lightgray;
+                        border-radius: 10px;
+                        box-shadow: inset 0px 0px 5px white;
+                    }
+
+                    .commentContent {
+                        width: 100%;
+                        height: fit-content;
+                        padding: 3px 0;
+
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3px;
+
+                        background-color: white;
+                        border-radius: 7px;
+
+                        .commentTop {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 4px;
+                            align-items: flex-end;
+                            border-radius: 5px;
+                            margin-left: 2px;
+
+                            .userImg {
+                                width: 32px;
+                                height: 32px;
+                                border-radius: 50%;
+                            }
+
+                            .userName {
+                                font-size: 14px;
+                                font-weight: bold;
+                                margin-bottom: 3px;
+                            }
+
+                            .closeBtn {
+                                margin-left: auto;
+                                margin-right: 7px;
+                                margin-bottom: 13px;
+
+                                width: 15px;
+                                height: 15px;
+                                border: none;
+                                border-radius: 50%;
+                                background-color: transparent;
+
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+
+                                &:hover {
+                                    background-color: lightgray;
+                                }
+                            }
+                        }
+
+                        .commentBot {
+                            margin: 0 auto;
+                            width: 94%;
+
+                            .commentBtns {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: flex-end;
+                                align-items: center;
+                                gap: 3px;
+
+                                color: gray;
+                                font-size: 12px;
+                                margin-right: 1px;
+
+                                .commentBtn {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    width: 20px;
+                                    height: 20px;
+                                    border: none;
+                                    border-radius: 50%;
+                                    cursor: pointer;
+                                    background-color: transparent;
+
+                                    &:hover {
+                                        background-color: rgb(240, 240, 240);
+                                    }
+
+                                    &.selected {
+                                        color: #B25FF3;
+                                    }
+                                }
+
+                                .submitBtn {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    width: 30px;
+                                    height: 26px;
+                                    border: none;
+                                    border-radius: 5px;
+                                    cursor: pointer;
+                                    color: white;
+                                    background-color: #B25FF3;
+
+                                    &:hover {
+                                        background-color: #442F55;
+                                    }
+                                }
+                            }
+
+                            .commentData {
+                                width: 100%;
+
+                                .commentWrite {
+                                    margin: 0 auto;
+                                    width: 95%;
+                                    resize: vertical;
+                                    min-height: 40px;
+                                    max-height: 80px;
+
+                                    &::-webkit-scrollbar {
+                                        width: 9px;
+                                    }
+
+                                    &::-webkit-scrollbar-thumb {
+                                        background-color: #be9ada;
+                                        border-radius: 10px;
+                                        background-clip: padding-box;
+                                        border: 2px solid transparent;
+                                    }
+
+                                    &::-webkit-scrollbar-track {
+                                        background-color: lightgray;
+                                        border-radius: 10px;
+                                        box-shadow: inset 0px 0px 5px white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .displayModal {
+        .modalBox {
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            overflow-y: auto;
+            height: 98%;
+
+            .leftBox {
+                width: 100%;
+                height: 600px;
+
+                .leftInner {
+                    .leftTop {
+                        .LTleft {
+                            .authorImg {
+                                width: 35px;
+                                height: 35px;
+                            }
+                        }
+
+                        .LTright {
+                            margin-right: 9px;
+
+                            .btn {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+
+                                &.close {
+                                    display: flex;
+                                    border-radius: 50%;
+                                    width: 28px;
+                                    height: 28px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .rightBox {
+                width: 98%;
+                max-width: none;
+                height: fit-content;
+                max-height: 700px;
+
+                .rightTop {
+                    height: 120px;
+                    justify-content: space-around;
+
+                    .topTop {
+                        height: fit-content;
+                        margin-left: 5px;
+                        margin-bottom: 2px;
+                    }
+
+                    .topMid {
+                        height: 20px;
+                        margin: 0 7px;
+                        height: 60px;
+                        max-height: none;
+                    }
+
+                    .topBot {
+                        margin-left: 7px;
+                    }
+                }
+
+                .rightMid {
+                    height: 60px;
+                }
+
+                .rightBot {
+                    height: fit-content;
+                    max-height: 400px;
+
+                    .commentBox {
+                        .commentContent {
+                            .commentTop {
+                                margin-left: 5px;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .displayModal {
+        .modalBox {
+            .leftBox {
+                .leftInner {
+                    .leftTop {
+                        margin-bottom: 7px;
+
+                        .LTright {
+                            gap: 5px;
+                            margin-right: 7px;
+
+                            .btn {
+                                border-radius: 50%;
+                                width: 34px;
+                                height: 34px;
+
+                                .btnText {
+                                    display: none;
+                                }
+
+                                &.close {
+                                    width: 34px;
+                                    height: 34px;
+                                }
+                            }
+                        }
+                    }
+
+                    .leftMid {
+                        height: 60%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,495 @@
+/* 1300 / 1000 / 500 px */
+.reqMain {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .reqBox {
+        width: 100%;
+        max-width: 1300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+
+        .reqTop {
+            width: calc(100% - 227px);
+            display: flex;
+            flex-direction: row;
+            gap: 7px;
+
+            .reqA {
+                width: 150px;
+
+                .reqFilter {
+                    width: 99%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background-color: #EADDF3;
+                    padding-bottom: 8px;
+                    box-shadow: 1px 3px 4px gray;
+                    
+                    .filterNav {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        background-color: #B25FF3;
+                        color: white;
+                        border-radius: 8px 8px 0 0;
+                        padding: 2px 0px;
+                        font-weight: 600;
+                        font-size: 14px;
+                    }
+
+                    .filterInput {
+                        width: calc(100%-2px);
+                        border-bottom: 2px solid #B25FF3;
+                        margin-bottom: 5px;
+                        display: flex;
+                        flex-direction: column;
+                        background-color: white;
+
+                        .tagInput {
+                            width: 95%;
+                            height: 22px;
+                            border: none;
+                        }
+
+                        .filterBtn {
+                            display: flex;
+                            align-items: center;
+                            gap: 3px;
+                            font-weight: 600;
+                            border-radius: 8px;
+                            border: none;
+                            background-color: #B25FF3;
+                            color: white;
+                            padding: 3px 8px;
+                            margin: 4px;
+                            margin-left: auto;
+
+                            &:hover {
+                                cursor: pointer;
+                                background-color: white;
+                                color: #B25FF3;
+                            }
+                        }
+                    }
+
+                    .filterTagsBox {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 7px;
+                        margin-bottom: 12px;
+
+                        .filterTag {
+                            width: fit-content;
+                            background-color: ivory;
+                            box-shadow: 0px 2px 2px #B25FF3;
+                            border-radius: 10px;
+                            padding: 1px 5px;
+                            display: flex;
+                            align-items: center;
+
+                            .tagDel {
+                                border-radius: 14px;
+                                border: none;
+
+                                &:hover {
+                                    cursor: pointer;
+                                    background-color: gray;
+                                }
+                            }
+                        }
+                    }
+
+                    
+
+                    .filterControlBtns {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 7px;
+
+                        .filterResetBtn, .filterApplyBtn {
+                            display: flex;
+                            align-items: center;
+                            gap: 3px;
+                            font-weight: 600;
+                            border-radius: 8px;
+                            border: none;
+                            background-color: #B25FF3;
+                            color: white;
+                            padding: 2px 8px;
+
+                            &:hover {
+                                cursor: pointer;
+                                background-color: white;
+                                color: #B25FF3;
+                            }
+                        } 
+
+                        .filterResetBtn {
+                            font-size: 12px;
+                            width: fit-content;
+                        }
+                    }
+                }
+            }
+
+            .reqB {
+                width: calc(100% - 150px);
+                display: flex;
+                flex-direction: column;
+                gap: 7px;
+
+                /* 추천 의뢰랑 의뢰 검색 동시에 작성함 */
+                .reqSuggest, .reqSearch {
+                    margin: 7px;
+
+                    .reqSugTitle, .reqSearchTitle {
+                        background-color: #B25FF3;
+                        border-radius: 8px 8px 0px 0px;
+                        color: white;
+                        text-indent: 7px;
+                        padding: 3px;
+                    }
+                    .reqSugBox, .reqSearchBox {
+                        padding: 7px;
+                        background-color: lightgray;
+                    }
+                    .reqSugRefresh {
+                        display: flex;
+                        background-color: lightgray;
+                        padding-bottom: 5px;
+                        border-radius: 0 0 7px 7px;
+
+                        .SugRefBtn {
+                            margin-left: auto;
+                            margin-right: 7px;
+                            background-color: #B25FF3;
+                            color: white;
+                            display: flex;
+                            align-items: center;
+                            margin-top: 7px;
+                            padding: 3px 8px;
+                            border: none;
+                            border-radius: 8px;
+
+                            &:hover{
+                                cursor: pointer;
+                                background-color: white;
+                                color: #B25FF3;
+                            }
+                        }
+                    }
+                    .reqSearchPagesNav {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 4px;
+                        background-color: lightgray;
+                        border-radius: 0 0 7px 7px;
+
+                        .arrowBtn {
+                            border: none;
+                            background-color: transparent;
+                            color: #B25FF3;
+
+                            &:hover {
+                                color: white;
+                                cursor: pointer;
+                            }
+                        }
+
+                        .pageNumBtns {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 4px;
+
+                            .numBtn {
+                                border: none;
+                                border-radius: 3px;
+                                background-color: transparent;
+
+                                &:hover {
+                                    background-color: #EADDF3;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .reqC {
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 7px;
+
+            .reqRTP {
+                padding-top: 7px;
+                width: 80%;
+
+                .RTPtitle {
+                    padding: 3px;
+                    color: white;
+                    background-color: #B25FF3;
+                    border-radius: 8px 8px 0px 0px;
+                    font-weight: 600;
+                }
+
+                .RTPbox {
+                    background-color: white;
+                    border: 1px solid black;
+                    border-top: none;
+                    border-radius: 0px 0px 8px 8px;
+
+                    .RTPitem {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        border-top: 1px solid lightgray;
+
+                        .itemRank {
+                            width: 7%;
+                            display: flex;
+                            justify-content: center;
+                            padding-left: 5px;
+                        }
+
+                        .itemKeyword {
+                            border: none;
+                            background-color: transparent;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+
+                            &:hover {
+                                color: gray;
+                                cursor: pointer;
+                            }
+                        }
+
+                        .itemDiff {
+                            padding-right: 3px;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+
+            .reqRTPShort {
+                display: none;
+            }
+
+            .reqAD {
+                padding: 7px;
+
+                .verAD {
+                    width: 160px;
+                    height: 600px;
+                    background-color: lightgray;
+                }
+
+                .horAD {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .reqMain {
+        .reqBox {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 0px;
+
+            .reqTop {
+                flex-direction: column;
+                align-items: center;
+                width: 80%;
+                gap: 7px;
+
+                .reqA {
+                    width: 90%;
+
+                    .reqFilter {
+                        width: calc(100% - 14px);
+                        margin: 0px 7px;
+
+                        .filterInput {
+                            width: 100%;
+
+                            .tagInputForm {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+
+                                .filterBtn {
+                                    width: fit-content;
+                                    min-width: 45px;
+                                }
+                            }
+                        }
+
+                        .filterTagsBox {
+                            flex-direction: row;
+                            flex-wrap: wrap;
+
+                            .filterTag {
+                                white-space: wrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                        }
+
+                        .filterControlBtns {
+                            flex-direction: row;
+                        }
+                    }    
+                }
+
+                .reqB {
+                    width: 90%;
+                }
+            }
+
+            .reqC {
+                width: 20%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .reqMain {
+        .reqBox {
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 12px;
+
+            .reqTop {
+                width: 98%;
+            }
+
+            .reqC {
+                width: 98%;
+                flex-direction: column;
+
+                .reqAD {
+                    .verAD {
+                        display: none;
+                    }
+
+                    .horAD {
+                        display: block;
+                        width: 728px;
+                        height: 90px;
+                        background-color: lightgray;
+                        margin: 0px auto;
+                    }
+                }
+
+                .reqRTP {
+                    display: none;
+                }
+
+                .reqRTPShort {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 7px;
+                    margin: 7px;
+                    background-color: #D9D9D9;
+                    padding: 0px 6px 0px 0px;
+                    border-radius: 14px;
+                    font-weight: 700;
+
+                    .RTPShortTitle {
+                        display: flex;
+                        align-items: center;
+                        font-size: 12px;
+                        width: fit-content;
+                        height: 22px;
+                        color: white;
+                        background-color: #B25FF3;
+                        padding: 5px 12px;
+                        border-radius: 14px;
+                        width: fit-content;
+                    }
+
+                    .RTPShortBox {
+                        display: flex;
+                        width: fit-content;
+
+                        .RTPShortItem {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 170px;
+
+                            .shortItemRank {
+                                display: flex;
+                                justify-content: center;
+                                padding: 0px 3px;
+                            }
+
+                            .shortItemKeyword {
+                                border: none;
+                                background-color: transparent;
+                                font-size: 18px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                font-size: 15px;
+                                white-space: nowrap;
+
+                                max-width: 60%;
+
+                                &:hover {
+                                    color: gray;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            .shortItemDiff {
+                                width: fit-content;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+                                padding-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .reqMain {
+        .reqBox {
+        }
+    }
+}

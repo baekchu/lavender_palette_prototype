@@ -1,0 +1,216 @@
+.notice {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 500;
+
+    width: 260px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    cursor: default;
+
+    box-shadow: 0px 4px 17px 1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 4px 17px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 4px 17px 1px rgba(0, 0, 0, 0.75);
+
+    .noticeTop {
+        width: 100%;
+        height: 30px;
+        background-color: #B25FF3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px 5px 0 0;
+
+        .noticeNav {
+            width: 97%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            .modalName {
+                font-size: 13px;
+                color: white;
+            }
+
+            .modalBtns {
+                .close {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 22px;
+                    height: 22px;
+                    font-size: 12px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    background-color: white;
+                    border: none;
+
+                    &:hover {
+                        background-color: lightgray;
+                    }
+                }
+            }
+        }
+    }
+
+    .noticeBot {
+        width: 100%;
+        height: 368px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 0 7px 7px;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(217, 227, 255, 1) 100%);
+
+        .noticeLogBox {
+            width: 96%;
+            height: 96%;
+            display: flex;
+            padding-top: 4px;
+            flex-direction: column;
+            align-items: center;
+            gap: 7px;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 9px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #be9ada;
+                border-radius: 10px;
+                background-clip: padding-box;
+                border: 2px solid transparent;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: lightgray;
+                border-radius: 10px;
+                box-shadow: inset 0px 0px 5px white;
+            }
+
+            .noticeLogContent {
+                width: 96%;
+                height: fit-content;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                border-radius: 7px;
+
+                background: rgb(255, 255, 255);
+                background: linear-gradient(145deg, rgba(255, 255, 255, 1) 0%, rgba(245, 225, 250, 1) 100%);
+
+                box-shadow: 2px 5px 5px 2px rgba(125, 125, 125, 0.75);
+                -webkit-box-shadow: 2px 5px 5px 2px rgba(125, 125, 125, 0.75);
+                -moz-box-shadow: 2px 5px 5px 2px rgba(125, 125, 125, 0.75);
+
+                .logImg {
+                    width: 42px;
+                    height: 42px;
+                    margin: 3px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
+
+                .logRight {
+                    width: 76%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: end;
+                    gap: 3px;
+
+                    .logTop {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: flex-end;
+                        width: 100%;
+
+                        .userName {
+                            font-size: 11px;
+                            font-weight: bold;
+                            cursor: pointer;
+                        }
+
+                        .logAlerm {
+                            height: 14px;
+                            display: flex;
+                            flex-direction: row;
+                            font-size: 10px;
+                            gap: 7px;
+                            margin-right: 3px;
+
+                            .messCnt {
+                                width: fit-content;
+                                min-width: 8px;
+                                padding: 0 4px;
+                                height: 14px;
+                                background-color: red;
+                                color: white;
+                                border-radius: 12px;
+                                font-weight: bold;
+                                display: flex;
+                                padding-bottom: 1px;
+                                justify-content: center;
+                                align-items: center;
+
+                                &.empty {
+                                    background-color: transparent;
+                                }
+                            }
+
+                            .like,
+                            .share,
+                            .buy,
+                            .bid {
+                                cursor: pointer;
+                            }
+
+                            .hideMessage {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 12px;
+                                border: none;
+                                background-color: transparent;
+                                color: gray;
+                                cursor: pointer;
+
+                                &:hover {
+                                    color: lightgray;
+                                }
+                            }
+                        }
+                    }
+
+                    .lastMessageBox {
+                        background-color: white;
+                        margin-right: 3px;
+                        border-radius: 3px;
+                        width: 96%;
+                        height: fit-content;
+                        font-size: 12px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+
+                &:hover {
+                    border: 2px solid #B25FF3;
+                    margin-top: -3px;
+                    margin-bottom: -1px;
+                }
+            }
+        }
+    }
+}

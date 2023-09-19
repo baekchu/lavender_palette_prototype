@@ -1,0 +1,98 @@
+.modal-container {
+    width: 400px;
+    height: 600px;
+    overflow-y: auto;
+
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(-0%, -50%);
+
+    /* 모달창 디자인 */
+    background-color: gray;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.modal-header {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    height: 30px;
+    background-color: blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.modal-header button {
+    display: flex;
+    align-items: end;
+    padding: 4px 7px;
+    border: 0px;
+    border-radius: 30px;
+    margin-left: auto;
+}
+
+.modal-nav {
+    position: sticky;
+    top: 30px;
+    background-color: beige;
+    height: 35px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    scrollbar-width: none;
+    /* Hide the scrollbar on Firefox */
+    -ms-overflow-style: none;
+    /* Hide the scrollbar on Internet Explorer */
+}
+
+.modal-nav::-webkit-scrollbar {
+    display: none;
+    /* Hide the scrollbar on Webkit-based browsers */
+}
+
+.modal-footer {
+    height: 46px;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    bottom: 0;
+}
+
+.modal-footer form {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    /* Expand the form to take the remaining space */
+}
+
+.modal-footer input {
+    width: 100%;
+    height: 30px;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.modal-footer button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+    /* Add some spacing between the textarea and the button */
+}
+
+.MuiFormControlLabel-label {
+    font-size: 8px;
+    margin-left: auto;
+}

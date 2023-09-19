@@ -1,0 +1,185 @@
+.shopContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    padding-bottom: 5px;
+
+    width: 24%;
+    max-width: 24%;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 7px;
+
+    .ImgBox {
+        display: flex;
+        justify-content: center;
+        margin: 8px;
+        margin-bottom: 2px;
+        width: 95%;
+        height: 95%;
+
+        .contentImg {
+            background-color: silver;
+            width: 100%;
+            height: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+    }
+
+    .topBox {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 4px;
+        border-bottom: 2px solid lightgray;
+
+        .info {
+            height: 26px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+
+            .author {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                justify-content: flex-end;
+                gap: 3px;
+
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+
+                .authorImg {
+                    width: 42px;
+                    height: 42px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        .underBox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            .title {
+                margin-left: 4px;
+                width: 50%;
+                font-size: 22px;
+                font-weight: 700;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .price {
+                display: flex;
+                justify-content: end;
+                font-weight: 700;
+                margin-top: 4px;
+                color: #B25FF3;
+            }
+        }
+        
+    }
+
+    .midBox {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        .innerBox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .title {
+                color: gray;
+                margin-left: 3px;
+            }
+
+            .content {
+                font-size: 14px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                width: 70%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin-right: 3px;
+            }
+        }
+    }
+
+    .botBox {
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 7px;
+
+        .leftBox {
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        .btn {
+            width: 36px;
+            height: 36px;
+        }
+
+        .btnRev {
+            width: fit-content;
+            height: 34px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            background-color: #B25FF3;
+            padding: 0px 10px;
+            
+            &:hover {
+                background-color: #442F55;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .shopContent {
+        width: 24%;
+        max-width: 24%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .shopContent {
+        width: 48%;
+        max-width: 48%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .shopContent {
+        width: 100%;
+        max-width: 100%;
+    }
+}

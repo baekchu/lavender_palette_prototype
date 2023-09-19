@@ -1,0 +1,775 @@
+.userPageBack {
+    margin: -8px 0px 0px -8px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
+
+    .btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        width: fit-content;
+        height: fit-content;
+        border: 1px solid #B25FF3;
+        border-radius: 22px;
+        background-color: white;
+        color: #B25FF3;
+        cursor: pointer;
+        padding: 3px 15px;
+        font-weight: bold;
+
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+            background-color: lightgray;
+        }
+
+        &.selected {
+            background-color: #B25FF3;
+            color: white;
+
+            &:hover {
+                background-color: #442F55;
+            }
+        }
+    }
+
+    .backImg {
+        width: 100%;
+        height: 360px;
+
+        .backImg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .outsideBox {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #eaddf3;
+        background: linear-gradient(180deg,#eaddf3 0%, #ffffff 80%);
+        background: -webkit-linear-gradient(180deg,#eaddf3 0%, #ffffff 80%);
+        background: -moz-linear-gradient(180deg,#eaddf3 0%, #ffffff 80%);
+    }
+
+    .contentBox {
+        width: 100%;
+        max-width: 1300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        .topBox {
+            background-color: transparent;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            flex-direction: row;
+            margin-bottom: 10px;
+            gap: 1%;
+
+            .topBoxLeft {
+                width: 65%;
+                margin: auto 0;
+
+                .cardLoc {
+                    width: 35%;
+                    position: relative;
+                }
+
+                .selfIntro {
+                    width: 65%;
+                    height: 90px;
+                    margin-left: auto;
+                    background-color: rgb(245, 245, 245);
+                    border-radius: 7px;
+                    padding: 3px 0;
+                    margin-top: 7px;
+
+                    .infoBox {
+                        width: 95%;
+                        height: 95%;
+                        margin: auto;
+                        font-size: 14px;
+                        border-radius: 7px;
+                        overflow-y: auto;
+
+                        &::-webkit-scrollbar {
+                            width: 9px;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background-color: #be9ada;
+                            border-radius: 10px;
+                            background-clip: padding-box;
+                            border: 2px solid transparent;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background-color: lightgray;
+                            border-radius: 10px;
+                            box-shadow: inset 0px 0px 5px white;
+                        }
+                    }
+                }
+            }
+
+            .topBoxRight {
+                width: 35%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .userBtns {
+                    width: 97%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 7px;
+
+                    .btnsTop {
+                        width: 92%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        margin-top: 7px;
+                        gap: 7px;
+                    }
+
+                    .btnsBot {
+                        width: 90%;
+                        background-color: #B25FF3;
+                        border-radius: 7px 7px 7px 7px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3px;
+
+                        .otherTitle {
+                            font-weight: bold;
+                            color: white;
+                            font-size: 13px;
+                            text-indent: 1rem;
+                            padding: 1px 0;
+                        }
+
+                        .otherDisplay {
+                            padding: 2px 0;
+                            display: flex;
+                            flex-flow: nowrap;
+                            flex-direction: row;
+                            justify-content: space-around;
+                            gap: 7px;
+                            background-color: rgb(233, 233, 233);
+                            border-radius: 0 0 7px 7px;
+
+                            .otherBtns {
+                                display: flex;
+                                flex-direction: row;
+                                width: 98%;
+                                flex-flow: nowrap;
+                                overflow-x: auto;
+
+                                .btn {
+                                    width: 44px;
+                                    height: 44px;
+                                    border-radius: 50%;
+                                    cursor: pointer;
+                                }
+
+                                &::-webkit-scrollbar {
+                                    height: 9px;
+                                }
+
+                                &::-webkit-scrollbar-thumb {
+                                    background-color: #be9ada;
+                                    border-radius: 5px;
+                                    background-clip: padding-box;
+                                    border: 2px solid transparent;
+                                }
+
+                                &::-webkit-scrollbar-track {
+                                    background-color: lightgray;
+                                    border-radius: 10px;
+                                    box-shadow: inset 0px 0px 5px white;
+                                }
+
+                                .other {
+                                    width: fit-content;
+                                    height: fit-content;
+                                    border: none;
+                                    cursor: pointer;
+                                    border-radius: 50%;
+                                    background-color: transparent;
+
+                                    .otherImg {
+                                        width: 44px;
+                                        height: 44px;
+                                        border-radius: 50%;
+                                        object-fit: cover;
+                                    }
+                                }
+                            }
+
+                            .otherRefresh {
+                                width: fit-content;
+
+                                .btn {
+                                    width: 44px;
+                                    height: 44px;
+                                    border-radius: 50%;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .midBox {
+            background-color: white;
+            border-radius: 7px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: stretch;
+            margin-top: 7px;
+            padding: 7px 0;
+            gap: 7px;
+
+            box-shadow: 0px 6px 7px 3px rgba(0, 0, 0, 0.59);
+            -webkit-box-shadow: 0px 6px 7px 3px rgba(0, 0, 0, 0.59);
+            -moz-box-shadow: 0px 6px 7px 3px rgba(0, 0, 0, 0.59);
+
+            .midLeft {
+                width: 15%;
+                min-width: 120px;
+
+                .menuBox {
+                    width: 96%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin: auto;
+
+                    /* 메뉴 버튼 */
+                    .menuBtn {
+                        display: flex;
+                        white-space: nowrap;
+                        align-items: center;
+
+                        width: 80%;
+                        height: 40px;
+                        border: none;
+                        border-top: 1px solid lightgray;
+                        border-bottom: 1px solid lightgray;
+                        cursor: pointer;
+                        background-color: white;
+                        font-size: 15px;
+                        text-align: start;
+                        text-indent: 5%;
+                        transition: all 0.2s ease;
+
+                        &:hover {
+                            background-color: rgb(233, 233, 233);
+                        }
+
+                        &.selected {
+                            background-color: #eaddf3;
+                            background: #eaddf3;
+                            background: linear-gradient(90deg, #eaddf3 0%, #ffffff 80%);
+                            background: -webkit-linear-gradient(90deg, #eaddf3 0%, #ffffff 80%);
+                            background: -moz-linear-gradient(90deg, #eaddf3 0%, #ffffff 80%);
+
+                            &:hover {
+                                background-color: rgb(233, 233, 233);
+                            }
+
+                            /*수정 필요*/
+                        }
+                    }
+                }
+            }
+
+            /* 대표 작품 출력 구역 */
+            .midRight {
+                background-color: white;
+                border-radius: 7px;
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                /* 선택한 제목 */
+                .repTitle {
+                    width: 100%;
+                    font-weight: bold;
+                    color: white;
+                    border-radius: 5px;
+                    background: #b25ff3;
+                    background: linear-gradient(90deg,#b25ff3 0%, #ffffff 80%);
+                    background: -webkit-linear-gradient(90deg,#b25ff3 0%, #ffffff 80%);
+                    background: -moz-linear-gradient(90deg,#b25ff3 0%, #ffffff 80%);
+                    text-indent: 1%;
+                    padding: 7px 0;
+                    font-size: 16px;
+                }
+
+                /* 대표 작품 출력 */
+                .repDisplay {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    .disBox {
+                        background-color: white;
+                        width: 99%;
+                        margin: 5px 0;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        position: relative;
+
+                        .repContent {
+                            width: 33.3%;
+                            height: 350px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+
+                            .repImg {
+                                width: 98%;
+                                height: 98%;
+                                object-fit: cover;
+                                transition: filter 0.3s ease-in-out;
+                            }
+
+                            .repImgInfo {
+                                position: absolute;
+                                color: white;
+                                bottom: 9px;
+                                background-color: transparent;
+                                opacity: 0;
+                                transition: opacity 0.2s ease-in-out;
+                                font-size: 17px;
+    
+                                width: fit-content;
+                                max-width: 90%;
+                            }
+    
+                            &:hover {
+                                .repImg {
+                                    filter: brightness(70%);
+                                }
+    
+                                .repImgInfo {
+                                    opacity: 100%;
+                                    transition: opacity 0.2s ease-in-out 0.3s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .botBox {
+            background-color: white;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 7px;
+            margin-bottom: 20px;
+
+            /* 이미지 출력 박스 */
+            .imgDisplay {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                gap: 5px;
+                border-radius: 7px;
+
+                box-shadow: 0px 6px 7px 3px rgba(0, 0, 0, 0.59);
+                -webkit-box-shadow: 0px 6px 7px 3px rgba(0, 0, 0, 0.59);
+                -moz-box-shadow: 0px 6px 7px 3px rgba(0, 0, 0, 0.59);
+
+                /* 네비게이션 버튼 */
+                .imgDisplayNav {
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1px;
+
+                    .navBtns {
+                        display: flex;
+                        flex-direction: row;
+                        width: 100%;
+                        max-width: 500px;
+
+                        .btn {
+                            width: 50%;
+                            height: 40px;
+                            border-radius: 0;
+                            /*
+                            border: 1px solid #B25FF3;
+                            border-left: none;
+                            border-right: none;*/
+                            border: none;
+                            border-bottom: 2px solid #B25FF3;
+                        }
+                    }
+                }
+
+                /* 이미지 박스 */
+                .imgDisplayBox {
+                    width: 95%;
+                    height: fit-content;
+                    padding: 10px 6px;
+                    background-color: #eaddf3;
+                    border-radius: 7px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+
+                    .artworks {
+                        position: relative;
+                        width: 19.5%;
+                        height: 260px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 2px 0;
+                        margin: 4px 0;
+                        cursor: pointer;
+
+                        .artworkImg {
+                            width: 99%;
+                            height: 99%;
+                            object-fit: cover;
+                            transition: filter 0.3s ease-in-out;
+                        }
+
+                        .artworkInfo {
+                            position: absolute;
+                            color: white;
+                            bottom: 9px;
+                            background-color: transparent;
+                            opacity: 0;
+                            transition: opacity 0.2s ease-in-out;
+
+                            width: fit-content;
+                            max-width: 90%;
+                        }
+
+                        &:hover {
+                            .artworkImg {
+                                filter: brightness(70%);
+                            }
+
+                            .artworkInfo {
+                                opacity: 100%;
+                                transition: opacity 0.2s ease-in-out 0.3s;
+                            }
+                        }
+                    }
+                }
+
+                /* 더보기 버튼 */
+                .seeMore {
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding-bottom: 30px;
+                    gap: 7px;
+
+                    .more {
+                        background-color: transparent;
+                        border: none;
+                        color: #B25FF3;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin: 8px 0;
+                    }
+
+                    .loadingBar {
+                        width: 0;
+                        transition: width 0.3s ease-in-out;
+                        color: #B25FF3;
+
+                        &.active {
+                            width: 80%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1300px) {
+    .userPageBack {
+        .contentBox {
+            max-width: 1000px;
+
+            .topBox {
+                .topBoxRight {
+                    .userBtns {
+                        .btnsTop {
+                            gap: 13px;
+
+                            .btn {
+                                padding: 5px;
+                                border-radius: 9px;
+
+                                .text {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .midBox {
+                .midRight {
+                    .repDisplay {
+                        .disBox {
+                            .repContent {
+                                height: 270px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .botBox {
+                .imgDisplay {
+                    .imgDisplayBox {
+                        .artworks {
+                            width: 24.5%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .userPageBack {
+        .contentBox {
+            width: 95%;
+            max-width: 700px;
+
+            .topBox {
+                .topBoxLeft {
+                    width: 75%;
+
+                    .selfIntro {
+                        width: 60%;
+                    }
+                }
+
+                .topBoxRight {
+                    width: 25%;
+                }
+            }
+
+            .midBox {
+                .midRight {
+                    .repDisplay {
+                        .disBox {
+                            .repContent {
+                                height: 190px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .botBox {
+                .imgDisplay {
+                    .imgDisplayBox {
+                        .artworks {
+                            width: 33.2%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .userPageBack {
+        .contentBox {
+            .topBox {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .topBoxRight {
+                    .userBtns {
+                        .btnsTop {
+                            gap: 13px;
+
+                            .btn {
+                                margin: 5px 0;
+                                padding: 1px 12px;
+                                border-radius: 22px;
+
+                                .text {
+                                    display: flex;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .topBoxLeft {
+                    width: 95%;
+
+                    .selfIntro {
+                        justify-content: space-around;
+                        width: 55%;
+                        margin-left: 43%;
+                    }
+                }
+
+                .topBoxRight {
+                    width: 95%;
+                }
+            }
+
+            .botBox {
+                .imgDisplay {
+                    .imgDisplayBox {
+                        .artworks {
+                            width: 49.8%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .userPageBack {
+        .contentBox {
+
+            .topBox {
+                .topBoxLeft {
+                    display: flex;
+                    flex-direction: column;
+
+                    .cardLoc {
+                        width: 100%;
+                        margin: 0;
+                        margin-top: -70px;
+                    }
+
+                    .selfIntro {
+                        width: 90%;
+                        margin: 0 auto;
+                        height: 80px;
+                        margin-top: 100px;
+
+                        .infoBox {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .topBoxRight {
+                    .userBtns {
+                        .btnsTop {
+                            gap: 13px;
+                            justify-content: flex-end;
+
+                            .btn {
+                                padding: 5px;
+                                border-radius: 9px;
+
+                                .text {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .midBox {
+                justify-content: space-between;
+                gap: 1px;
+
+                .midLeft {
+                    min-width: 40px;
+
+                    .menuBox {
+                        width: 40px;
+                        justify-content: center;
+
+                        .menuBtn {
+                            height: 36px;
+                            font-size: 13px;
+                            .menuText {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                .midRight {
+                    width: 100%;
+                    .repTitle {
+                        text-indent: 7px;
+                    }
+                    .repDisplay {
+                        .disBox {
+                            .repContent {
+                                height: 140px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .botBox {
+                .imgDisplay {
+                    .imgDisplayBox {
+                        .artworks {
+                            width: 99.8%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

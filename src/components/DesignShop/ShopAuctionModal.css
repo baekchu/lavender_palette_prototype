@@ -1,0 +1,729 @@
+.auctionModalBack {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+
+    .shopAuctionModal {
+        background-color: #EADDF3;
+        padding: 7px;
+        border-radius: 12px;
+        width: 1000px;
+        height: 600px;
+        display: flex;
+        flex-direction: row;
+
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .AuctionModalLeft {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+
+            .modalLeftTop {
+                background-color: black;
+                height: 75%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow-y: auto;
+                &::-webkit-scrollbar {
+                    width: 9px;
+                }
+    
+                &::-webkit-scrollbar-thumb {
+                    background-color: #be9ada;
+                    border-radius: 10px;
+                    background-clip: padding-box;
+                    border: 2px solid transparent;
+                }
+    
+                &::-webkit-scrollbar-track {
+                    background-color: lightgray;
+                    border-radius: 10px;
+                    box-shadow: inset 0px 0px 5px white;
+                }
+                .imgZoom {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    width: 28px;
+                    height: 28px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    border-radius: 7px;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    color: rgb(196, 196, 196);
+                    cursor: pointer;
+                    &:hover{
+                        background-color: rgba(255, 255, 255, 0.3);
+                    }
+                }
+                .auctionImg {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+                .auctionImgZoom {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .modalLeftBottom {
+                height: 25%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .auctionModalInfo {
+                    width: 95%;
+                    height: 60%;
+                    display: flex;
+                    flex-direction: column;
+
+                    .infoNav {
+                        height: 40%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        font-size: 13px;
+
+                        .nav1,
+                        .nav2,
+                        .nav3 {
+                            display: flex;
+                            align-items: center;
+                            height: 100%;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            margin: 0px 4px;
+
+                            .navTitle {
+                                width: fit-content;
+                                height: 100%;
+                                padding-right: 8px;
+                                font-size: 16px;
+                                font-weight: 600;
+                                display: flex;
+                                align-items: center;
+                            }
+                        }
+
+                        .nav1 {
+                            width: 40%;
+                        }
+
+                        .nav2 {
+                            width: 30%;
+                        }
+
+                        .nav3 {
+                            width: 20%;
+                        }
+                    }
+
+                    .infoDesc {
+                        border-top: 2px solid #B25FF3;
+                        height: 60%;
+                        font-size: 13px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        .descTitle {
+                            width: 5%;
+                            height: 100%;
+                            padding-right: 8px;
+                            font-size: 16px;
+                            font-weight: 600;
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        .desc {
+                            width: 95%;
+                            height: 80%;
+                            margin: auto 0px;
+                            display: flex;
+                            overflow-y: auto;
+
+                            &::-webkit-scrollbar {
+                                width: 9px;
+                            }
+                
+                            &::-webkit-scrollbar-thumb {
+                                background-color: #be9ada;
+                                border-radius: 10px;
+                                background-clip: padding-box;
+                                border: 2px solid transparent;
+                            }
+                
+                            &::-webkit-scrollbar-track {
+                                background-color: lightgray;
+                                border-radius: 10px;
+                                box-shadow: inset 0px 0px 5px white;
+                            }
+                        }
+                    }
+                }
+
+                .botNav {
+                    width: 100%;
+                    height: 40%;
+                    display: flex;
+
+                    .infoPrice {
+                        width: 45%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        .priceTitle {
+                            padding-right: 18px;
+                            font-weight: 600;
+                            color: gray;
+                        }
+                    }
+
+                    .displayPrice {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 37%;
+
+                        .priceBox {
+                            width: 200px;
+                            padding: 8px;
+                            display: flex;
+                            justify-content: center;
+                            background-color: white;
+                            border-radius: 5px;
+                        }
+                    }
+
+                    .displayTime {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 18%;
+
+                        .timeBox {
+                            background-color: white;
+                            padding: 6px 12px;
+                            font-weight: 700;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .AuctionModalRight {
+            width: 30%;
+
+            .modalRightTop {
+                height: 75%;
+
+                .navBtns {
+                    height: 8%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 0px 7px;
+
+                    .navBtn {
+                        width: 30px;
+                        height: 30px;
+                        background-color: transparent;
+                        color: #B25FF3;
+                        border-radius: 50%;
+
+                        &:hover {
+                            background-color: white;
+                        }
+                    }
+
+                    .navLeft {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 3px;
+                    }
+                }
+
+                .auctionLog {
+                    height: 92%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .logBox {
+                        background-color: silver;
+                        width: 90%;
+                        height: 95%;
+                        border-radius: 5px;
+
+                        overflow-y: auto;
+                        scrollbar-width: none;
+
+                        &::-webkit-scrollbar {
+                            width: 9px;
+                        }
+            
+                        &::-webkit-scrollbar-thumb {
+                            background-color: #be9ada;
+                            border-radius: 10px;
+                            background-clip: padding-box;
+                            border: 2px solid transparent;
+                        }
+            
+                        &::-webkit-scrollbar-track {
+                            background-color: lightgray;
+                            border-radius: 10px;
+                            box-shadow: inset 0px 0px 5px white;
+                        }
+                    }
+                }
+            }
+
+            .modalRightBottom {
+                height: 25%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .bid {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 7px;
+
+                    padding-bottom: 8px;
+                    margin-bottom: 8px;
+                    border-bottom: 2px solid darkgray;
+
+                    .bidInput {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        gap: 7px;
+
+                        .bidCon {
+                            width: 30px;
+                            height: 30px;
+                            color: white;
+                            background-color: #B25FF3;
+
+                            &:hover {
+                                cursor: pointer;
+                                background-color: blueviolet;
+                            }
+                        }
+
+                        .bidTextInput {
+                            border: none;
+                            border-radius: 5px;
+                        }
+                    }
+
+                }
+
+                .bidAuto {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: 85%;
+                    justify-content: space-around;
+
+                    .autoBidPrice {
+                        color: lightgray;
+                    }
+                }
+
+                .bidSubmit {
+                    font-size: 17px;
+                    width: 250px;
+                    height: 35px;
+                    color: white;
+                    background-color: #B25FF3;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: blueviolet;
+                    }
+                }
+            }
+        }
+    }
+
+    .shopAuctionModalSmall {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .auctionModalBack {
+        display: flex;
+        justify-content: center;
+
+        .shopAuctionModal {
+            display: none;
+        }
+
+        .shopAuctionModalSmall {
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            gap: 7px;
+            width: 100%;
+            max-width: 800px;
+            height: fit-content;
+            max-height: 95%;
+            margin-top: auto;
+            border-radius: 7px 7px 0 0;
+            align-items: center;
+            &::-webkit-scrollbar {
+                width: 9px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #be9ada;
+                border-radius: 10px;
+                background-clip: padding-box;
+                border: 2px solid transparent;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: lightgray;
+                border-radius: 10px;
+                box-shadow: inset 0px 0px 5px white;
+            }
+
+        .top {
+            width: 94%;
+            max-width: 780px;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
+            position: fixed;
+
+            .topLeft {
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+            }
+
+            .navBtn {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background-color: #EADDF3;
+                &:hover{
+                    background-color: #B25FF3;
+                    color: white;
+                }
+            }
+        }
+
+        .mid {
+            padding-top: 7px;
+            width: 98%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .artImg {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .bot {
+            background-color: #EADDF3;
+            width: 98%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            border-radius: 7px;
+
+            .botTop {
+                border-radius: 7px;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                margin-bottom: 7px;
+
+                .botTopLeft {
+                    width: 60%;
+                    display: flex;
+                    flex-direction: column;
+
+                    .mainInfo {
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 4px;
+
+                        .title {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: flex-end;
+                            gap: 7px;
+                            margin-left: 15px;
+                            margin-top: 5px;
+                            margin-bottom: -5px;
+                            font-size: 18px;
+                            font-weight: 600;
+
+                            .regDate {
+                                font-weight: normal;
+                                font-size: 14px;
+                            }
+                        }
+
+                        .author {
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: end;
+                            font-size: 14px;
+                            gap: 7px;
+
+                            .authorImg {
+                                width: 34px;
+                                height: 34px;
+                                border-radius: 50%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+
+                    .desc {
+                        background-color: whitesmoke;
+                        border-radius: 4px;
+                        margin: 3px auto;
+                        width: 94%;
+                        height: 80px;
+                        font-size: 14px;
+                        white-space: wrap;
+                        overflow-y: auto;
+
+                        &::-webkit-scrollbar {
+                            width: 9px;
+                        }
+            
+                        &::-webkit-scrollbar-thumb {
+                            background-color: #be9ada;
+                            border-radius: 10px;
+                            background-clip: padding-box;
+                            border: 2px solid transparent;
+                        }
+            
+                        &::-webkit-scrollbar-track {
+                            background-color: lightgray;
+                            border-radius: 10px;
+                            box-shadow: inset 0px 0px 5px white;
+                        }
+                    }
+                }
+
+                .botTopRight {
+                    width: 40%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 7px;
+                    margin: 3px;
+
+                    .leftTime {
+                        width: 90%;
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: end;
+                        margin-right: 17px;
+                    }
+
+                    .price {
+                        width: 90%;
+                        height: 20%;
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: end;
+                        padding-bottom: 3px;
+                        border-bottom: 2px solid gray;
+                        color: #B25FF3;
+                        font-weight: 700;
+                        font-size: 17px;
+                    }
+
+                    .infoBoxs {
+                        display: flex;
+                        flex-direction: column;
+                        width: 90%;
+                        background-color: whitesmoke;
+                        border-radius: 4px;
+                        gap: 4px;
+
+                        .infoBox {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+                            font-size: 14px;
+
+                            .title {
+                                font-size: 16px;
+                                width: 40px;
+                            }
+
+                            .sub {
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .bidBtnCont {
+                width: 95%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .messageBox {
+                    background-color: lightgray;
+                    border-radius: 5px;
+                    width: 262px;
+                    height: fit-content;
+
+                    .first {
+                        width: 90%;
+                        height: 35px;
+                        background-color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 520px;
+                        margin: 10px auto;
+                        color: #B25FF3;
+                        font-weight: bold;
+                    }
+                }
+
+                .bidBtnBox {
+                    display: flex;
+                    flex-direction: column;
+                    width: fit-content;
+                    align-items: center;
+                    gap: 5px;
+
+                    .selfBid {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: fit-content;
+                        gap: 7px;
+                        padding-bottom: 5px;
+                        border-bottom: 2px solid rgb(165, 165, 165);
+
+                        .bidInput {
+                            width: 50%;
+                            height: 30px;
+                            border: none;
+                            border-radius: 5px;
+                        }
+
+                        .bidBtn {
+                            width: 50%;
+                        }
+                    }
+
+                    .bidBtn {
+                        background-color: #B25FF3;
+                        color: white;
+                        width: 100%;
+                        height: 36px;
+                        font-size: 16px;
+                        border: none;
+                        border-radius: 5px;
+                        justify-content: space-evenly;
+                        align-items: center;
+
+                        .bidPrice {
+                            color: lightgray;
+                            font-weight: normal;
+                            font-size: 16px;
+                            margin-right: 20px;
+                        }
+
+                        &:hover {
+                            background-color: #442F55;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}
+
+@media screen and (max-width: 550px) {
+    .auctionModalBack {
+        .shopAuctionModalSmall {
+            .bot {
+                .purchaseBtn {
+                    flex-direction: column;
+                    align-items: start;
+                    gap: 7px;
+
+                    .messageBox {
+                        width: 290px;
+                        margin-left: 0;
+                    }
+                }
+
+                .btnBox {
+                    margin-left: auto;
+                }
+
+                .bidBtnCont {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 7px;
+
+                    .messageBox {
+                        width: 95%;
+                    }
+
+                    .bidBtnBox {
+                        width: 95%;
+                        gap: 7px;
+
+                        .selfBid {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

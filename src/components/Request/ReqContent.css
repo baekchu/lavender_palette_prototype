@@ -1,0 +1,148 @@
+/** 의뢰 컨텐츠 디자인 */
+.recContent {
+    .recContentTop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        background-color: white;
+        margin: 7px;
+        border: 1px solid gray;
+        border-radius: 25px 25px 2px 25px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: clip;
+
+        font-size: 17px;
+
+        /*  프로필 사진 */
+        .recItemImg {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            margin: 2px 5px;
+        }
+
+        /*  닉네임  */
+        .recItemNick {
+            font-size: 16px;
+            font-weight: 800;
+            margin-left: -6px;
+        }
+
+        /*  제목    */
+        .recItemTitle {
+            margin: 0px -3px;
+            width: 80%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /*  버튼    */
+        .recItemBtns {
+            margin-left: auto;
+            margin-right: 14px;
+
+            .btn1, .btn2, .btn3 {
+                border: transparent;
+                box-shadow: 0px 2px 2px;
+                border-radius: 8px;
+                color: #B25FF3;
+                background-color: ivory;
+                margin: 0px 4px;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: lightgray;
+                }
+            }
+        }
+    }
+
+    .recContentBottom {
+        display: flex;
+        width: 90%;
+        margin-left: auto;
+        margin-right: 7px;
+        border-radius: 0px 0px 8px 8px;
+        background-color: #EADDF3;
+        margin-top: -7px;
+        border: 1px solid gray;
+        border-top: none;
+
+        /*  태그    */
+        .recItemTags {
+            padding: 5px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            flex-wrap: wrap;
+            height: 27px;
+            /*줄은 바뀌나 첫번째 줄만 표시될 수 있도록*/
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            .recItemTag {
+                border: none;
+                border-radius: 10px;
+                background-color: ivory;
+                box-shadow: 1px 1px 2px #B25FF3;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0;
+                /* 태그가 줄어들지 않도록 함 */
+
+                width: fit-content;
+                min-width: fit-content;
+                height: 26px;
+                padding: 0px 6px;
+
+                &:hover {
+                    background-color: lightgray;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .recContent {
+        .recContentTop {
+            .recItemTags {
+                display: none;
+            }
+        }    
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .recContent {
+        .recContentTop {
+            .recItemNick {
+                display: none;
+            }
+
+            .recItemTitle {
+                font-size: 15px;
+            }
+
+            .recItemBtns {
+                .btn2, .btn3 {
+                    display: none;
+                }
+            }
+        }
+
+        .recContentBottom {
+            
+        }
+    }
+}

@@ -1,0 +1,956 @@
+.ResearchMain {
+    margin: -8px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(37, 37, 37);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: opacity 0.15s linear;
+    opacity: 100%;
+
+    &.hidden {
+        opacity: 0;
+    }
+
+    .researchContainer {
+        width: 1300px;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 15px;
+        margin-top: 40px;
+
+        .top {
+            flex-grow: 1;
+            width: 100%;
+            height: 0;
+            background-color: black;
+
+            display: flex;
+            align-items: center;
+
+            .imgBox {
+                z-index: 3;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .imgDisplay {
+                    z-index: 4;
+                    position: absolute;
+                    width: 100%;
+                    height: auto;
+                    max-height: 100%;
+                    margin: 0 auto;
+                    object-fit: contain;
+
+                    transition: opacity 0.2s ease-in-out;
+                    opacity: 100%;
+
+                    &.before {
+                        opacity: 0;
+                    }
+                }
+
+                .imgSkip {
+                    z-index: 5;
+                    position: absolute;
+                    width: fit-content;
+                    height: 30px;
+                    padding: 0 12px;
+                    right: 5px;
+                    bottom: 5px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    background-color: rgba(43, 43, 43, 0.7);
+                    color: white;
+                    border: none;
+                    border-radius: 15px;
+
+                    transition: opacity 0.3s ease;
+                    opacity: 100%;
+
+                    &.hidden {
+                        opacity: 0;
+                    }
+
+                    &:hover {
+                        background-color: rgba(70, 70, 70, 0.7);
+                    }
+                }
+            }
+        }
+
+        .bot {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            background-color: white;
+            border-radius: 7px;
+            height: 60px;
+            padding: 8px 0;
+
+            .left,
+            .mid,
+            .right {
+                height: 100%;
+            }
+
+            .Aside {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+
+                .left {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: start;
+                    align-items: center;
+                    margin-left: 10px;
+                    gap: 10px;
+                    width: 340px;
+
+                    .imgDiv {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        height: 100%;
+                        cursor: pointer;
+
+                        .profImg {
+                            width: 55px;
+                            height: 55px;
+                            object-fit: cover;
+                            border-radius: 50%;
+                        }
+
+                    }
+
+                    .textDiv {
+                        .title {
+                            width: 190px;
+
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            font-size: 18px;
+                            font-weight: bold;
+                        }
+
+                        .authorName {
+                            cursor: pointer;
+                        }
+                    }
+
+                    .btn {
+                        flex-direction: column;
+
+                        .tag {
+                            margin-top: -4px;
+                            color: gray;
+                        }
+                    }
+                }
+
+                .mid {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+
+                    width: 350px;
+                    background-color: #EADDF3;
+                    border-radius: 12px;
+
+                    .commentImg {
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                    }
+
+                    .commentBox {
+                        width: 50%;
+                        height: 45px;
+                        display: flex;
+                        flex-direction: row;
+
+                        .commentText {
+                            margin: auto;
+                            margin-left: 5px;
+                            width: 80%;
+                            height: 22px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+
+                        .commentLikes {
+                            width: 20%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+
+                            .like {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 25px;
+                                height: 25px;
+                                cursor: pointer;
+                                border: none;
+                                background-color: transparent;
+                                border-radius: 50%;
+                            }
+
+                            .num {
+                                color: gray;
+                                font-size: 13px;
+                                margin-top: -5px;
+                            }
+                        }
+                    }
+
+                    .btn {
+                        flex-direction: column;
+
+                        .tag {
+                            margin-top: -2px;
+                            color: gray;
+                        }
+                    }
+                }
+            }
+
+
+
+            .right {
+                width: fit-content;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 7px;
+                padding: 0 8px;
+
+                .btn {
+                    flex-direction: column;
+
+                    .tag {
+                        color: gray;
+                    }
+                }
+            }
+        }
+
+        .add {
+            background-color: white;
+            border-radius: 12px 12px 0 0;
+            width: 100%;
+            height: 30%;
+            transition: height 0.15s ease-in;
+            max-width: 1300px;
+            position: absolute;
+            z-index: 100;
+            bottom: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            overflow-x: hidden;
+
+            box-shadow: 0px -3px 10px 4px rgba(0, 0, 0, 0.16);
+            -webkit-box-shadow: 0px -3px 10px 4px rgba(0, 0, 0, 0.16);
+            -moz-box-shadow: 0px -3px 10px 4px rgba(0, 0, 0, 0.16);
+
+            .openTab {
+                width: 28px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                border-radius: 17px;
+                border: none;
+                background-color: transparent;
+                transition: opacity 0.01s ease-in-out 0.15s;
+                opacity: 100%;
+
+                &:hover {
+                    background-color: lightgray;
+                }
+
+                &.hidden {
+                    transition: opacity 0.01s ease-in-out 0s;
+                    opacity: 0;
+                }
+            }
+
+            .mainTab {
+                width: 98%;
+                height: 85%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 10px;
+
+                .addLeft {
+                    width: 65%;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: 5px;
+
+                    .artInfo {
+                        width: 100%;
+                        flex-grow: 1;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 3px;
+
+                        .artTop {
+                            width: 96%;
+                            border-bottom: 4px solid #B25FF3;
+
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+
+                            .artTitle {
+                                font-weight: bold;
+                                font-size: 21px;
+                                text-indent: 5px;
+                            }
+
+                            .author {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: end;
+                                gap: 7px;
+
+                                .authImg {
+                                    width: 34px;
+                                    height: 34px;
+                                    border-radius: 50%;
+                                    object-fit: cover;
+                                }
+
+                                .authName {
+                                    font-size: 18px;
+                                    margin-bottom: 3px;
+                                    margin-right: 15px;
+                                }
+                            }
+                        }
+
+                        .artBot {
+                            width: 96%;
+                            flex-grow: 1;
+                            height: 0;
+
+                            overflow-y: auto;
+
+                            &::-webkit-scrollbar {
+                                width: 9px;
+                            }
+
+                            &::-webkit-scrollbar-thumb {
+                                background-color: #be9ada;
+                                border-radius: 10px;
+                                background-clip: padding-box;
+                                border: 2px solid transparent;
+                            }
+
+                            &::-webkit-scrollbar-track {
+                                background-color: lightgray;
+                                border-radius: 10px;
+                                box-shadow: inset 0px 0px 5px white;
+                            }
+                        }
+                    }
+
+                    .tags {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 6px;
+                        padding-bottom: 3px;
+
+                        margin: 0 auto;
+                        width: 98%;
+                        height: 25px;
+                        overflow-x: auto;
+
+                        overflow-x: auto;
+                        white-space: nowrap;
+
+                        .tag {
+                            width: fit-content;
+                            background-color: #EADDF3;
+                            border-radius: 17px;
+                            padding: 2px 8px;
+                        }
+
+                        &::-webkit-scrollbar {
+                            height: 0px;
+                        }
+                    }
+
+                    .btns {
+                        width: 98%;
+                        margin: 0 auto;
+                        height: fit-content;
+                        background-color: rgb(247, 247, 247);
+                        padding: 6px;
+                        border-radius: 7px;
+
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 7px;
+
+                        overflow-x: auto;
+                        white-space: nowrap;
+
+                        .navBtn {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 2px;
+
+                            width: 60px;
+                            min-width: 60px;
+                            height: 60px;
+                            font-weight: bold;
+                            border: none;
+                            border-radius: 7px;
+                            background-color: white;
+                            color: #B25FF3;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: lightgray;
+                            }
+                        }
+
+                        &::-webkit-scrollbar {
+                            height: 0px;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background-color: #be9ada;
+                            border-radius: 10px;
+                            background-clip: padding-box;
+                            border: 2px solid transparent;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background-color: lightgray;
+                            border-radius: 10px;
+                            box-shadow: inset 0px 0px 5px white;
+                        }
+                    }
+                }
+
+                .addRight {
+                    width: 35%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: 5px;
+
+                    .comBox {
+                        flex-grow: 1;
+                        width: 100%;
+                        margin: 0 auto;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 7px;
+
+                        .title {
+                            font-size: 17px;
+                            font-weight: bold;
+                            background-color: #EADDF3;
+                            padding: 3px 0;
+                            text-indent: 1rem;
+                            border-radius: 7px;
+                        }
+
+                        .comments {
+                            flex-grow: 1;
+                            width: 96%;
+                            height: 0px;
+                            margin: auto;
+
+                            overflow-x: hidden;
+                            overflow-y: auto;
+
+                            .comment {
+                                display: flex;
+                                flex-direction: row;
+                                gap: 7px;
+
+                                .user {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+
+                                    .userImg {
+                                        width: 36px;
+                                        height: 36px;
+                                        border-radius: 50%;
+                                        object-fit: cover;
+                                    }
+
+                                    .time {
+                                        font-size: 12px;
+                                        color: gray;
+                                    }
+                                }
+
+                                .context {
+                                    margin-top: 10px;
+                                    background-color: #EADDF3;
+                                    border-radius: 0 12px 12px 12px;
+                                    font-size: 15px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    gap: 5px;
+                                    padding: 4px 0;
+                                    margin-right: 7px;
+
+                                    .userName {
+                                        width: 96%;
+                                        font-size: 12px;
+                                        font-weight: bold;
+                                    }
+
+                                    .contMain {
+                                        width: 96%;
+                                    }
+
+                                    .btmBtns {
+                                        width: 98%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        align-items: center;
+
+                                        .addAction {
+                                            border: none;
+                                            background-color: transparent;
+                                            width: 20px;
+                                            height: 20px;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            margin-left: 4px;
+                                            color: rgb(168, 168, 168);
+                                            font-size: 14px;
+                                            cursor: pointer;
+
+                                            &:hover {
+                                                color: black;
+                                            }
+                                        }
+
+                                        .commLike {
+                                            display: flex;
+                                            flex-direction: row;
+                                            align-items: center;
+                                            margin-left: auto;
+                                            margin-right: 12px;
+                                            gap: 5px;
+
+                                            .smlBtn {
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                width: 20px;
+                                                height: 20px;
+
+                                                border: none;
+                                                border-radius: 5px;
+                                                background-color: transparent;
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                    background-color: lightgray;
+                                                }
+                                            }
+
+                                            .likeNum {
+                                                font-weight: bold;
+                                                color: gray;
+
+                                                &.liked {
+                                                    color: #B25FF3;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &::-webkit-scrollbar {
+                                width: 9px;
+                            }
+
+                            &::-webkit-scrollbar-thumb {
+                                background-color: #be9ada;
+                                border-radius: 10px;
+                                background-clip: padding-box;
+                                border: 2px solid transparent;
+                            }
+
+                            &::-webkit-scrollbar-track {
+                                background-color: lightgray;
+                                border-radius: 10px;
+                                box-shadow: inset 0px 0px 5px white;
+                            }
+                        }
+                    }
+
+                    .comAdd {
+                        height: 45px;
+                        width: 95%;
+                        margin: 0 auto;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 9px;
+                        background-color: #EADDF3;
+                        padding: 0 5px;
+                        border-radius: 7px;
+
+                        .comText {
+                            flex-grow: 1;
+                            height: 70%;
+                            border: none;
+                            border-radius: 5px;
+                        }
+
+                        .send {
+                            width: 34px;
+                            height: 34px;
+                            background-color: #B25FF3;
+                            color: white;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            &.hidden {
+                height: 0;
+            }
+
+            &::-webkit-scrollbar {
+                width: 9px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #be9ada;
+                border-radius: 10px;
+                background-clip: padding-box;
+                border: 2px solid transparent;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: lightgray;
+                border-radius: 10px;
+                box-shadow: inset 0px 0px 5px white;
+            }
+        }
+
+
+    }
+
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 55px;
+        height: 55px;
+        background-color: transparent;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.10s ease-in;
+
+        &:hover {
+            background-color: lightgray;
+        }
+
+        &.clicked {
+            background-color: lightgray;
+        }
+    }
+}
+
+.toggleSwitch {
+    position: fixed;
+    top: 0;
+    left: 1rem;
+}
+
+.SideInfo {
+    z-index: 3;
+    position: fixed;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background-color: white;
+    width: 40px;
+    height: 150px;
+
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+    &.left {
+        left: 0;
+        border-radius: 0 5px 5px 0;
+        transition: left 0.15s ease-in-out;
+
+        &.before {
+            left: -40px;
+        }
+    }
+
+    &.right {
+        right: 0px;
+        border-radius: 5px 0 0 5px;
+        transition: right 0.15s ease-in-out;
+
+        &.before {
+            right: -40px;
+        }
+    }
+}
+
+.TopMessage {
+    z-index: 5;
+    position: fixed;
+    top: 2px;
+    left: 50%;
+    transition: top 0.2s ease-in-out;
+    transform: translateX(-50%);
+    background-color: white;
+
+    box-shadow: 0px 2px 1px 2px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 2px 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 2px 1px 2px rgba(0, 0, 0, 0.15);
+
+    border-radius: 5px;
+    width: fit-content;
+    height: 33px;
+    padding-left: 5px;
+    padding-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    font-weight: bold;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    &.hidden {
+        top: -37px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .ResearchMain {
+        .researchContainer {
+            max-width: 1000px;
+
+            .add {
+                width: 1000px;
+                height: 50%;
+
+                .mainTab {
+                    height: 88%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .ResearchMain {
+        .researchContainer {
+            width: 100%;
+            max-width: 700px;
+
+            .bot {
+                flex-direction: column;
+                height: fit-content;
+                align-items: end;
+                padding: 7px 0;
+                gap: 10px;
+
+                .Aside {
+                    .mid {
+                        width: 320px;
+                    }
+                }
+
+                .Bside {
+                    margin-right: 75px;
+                }
+            }
+
+            .add {
+                width: 700px;
+                overflow-y: auto;
+                padding-bottom: 40px;
+
+                .openTab {
+                    position: fixed;
+                    top: 45.3%;
+                }
+
+                .mainTab {
+                    flex-direction: column;
+                    justify-content: start;
+
+                    .addLeft {
+                        width: 100%;
+                        height: fit-content;
+
+                        display: flex;
+                        flex-direction: column;
+
+                        .artInfo {
+                            height: 200px;
+                        }
+
+                        .tags {
+                            height: 42px;
+
+                            .tag {
+                                display: flex;
+                            }
+                        }
+                    }
+
+                    .addRight {
+                        width: 100%;
+                        height: fit-content;
+
+                        .comBox {
+                            height: fit-content;
+
+                            .comments {
+                                height: fit-content;
+                                min-height: 200px;
+                                max-height: 300px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .btn {
+            .tag {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .ResearchMain {
+        .researchContainer {
+            width: 100%;
+            height: 100%;
+
+            margin-top: 15px;
+
+            .bot {
+                align-items: center;
+                border-radius: 0;
+
+                .Aside {
+                    .left {
+                        width: 90%;
+                        justify-content: space-between;
+                        gap: 3px;
+
+                        .imgDiv {
+                            width: 20%;
+                        }
+
+                        .textDiv {
+                            width: 60%;
+
+                            .title {
+                                width: 95%;
+                            }
+                        }
+                    }
+
+                    .mid {
+                        display: none;
+                    }
+                }
+
+                .Bside {
+                    margin-right: 0;
+                    width: 90%;
+                    max-width: 400px;
+                }
+
+                .right {
+                    width: 90%;
+                    justify-content: space-around;
+
+                    .btn {
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
+            }
+
+            .add {
+                width: 100%;
+            }
+        }
+    }
+}

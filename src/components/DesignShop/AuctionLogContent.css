@@ -1,0 +1,41 @@
+.auctionLogContent {
+    background-color: white;
+    border-radius: 25px;
+    height: 45px;
+    margin: 5px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logImg {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        padding: 3px;
+    }
+
+    .logText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+
+        font-size: 14px;
+        height: 95%;
+        width: 65%;
+
+        .logText1, .logText2 {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .logTime {
+        font-size: 12px;
+        padding-right: 6px;
+    }
+}

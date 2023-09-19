@@ -1,0 +1,94 @@
+/**   프로필 카드   */
+.profileBox {
+    position: absolute;
+    top: -230px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 206px;
+    height: 319px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 7px 3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 4px 7px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 7px 3px rgba(0,0,0,0.75);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .profileImg {
+        width: 186px;
+        height: 186px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .btnNav {
+        display: flex;
+        margin-left: auto;
+        padding: 0px 5px;
+        margin-bottom: -5px;
+
+        gap: 5px;
+
+        .Btn {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            border: transparent;
+            border-radius: 50%;
+            padding: 4px;
+            margin-top: 1px;
+            background-color: white;
+
+            &:hover {
+                background-color: lightgray;
+            }
+        }
+    }
+
+
+    .nameBox {
+        padding: 1px 5px;
+        padding-bottom: 7px;
+        color: white;
+
+        .userNick {
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .userUid {
+            font-size: 12px;
+        }
+    }
+
+    .statusBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 24px;
+        font-size: 15px;
+        font-weight: bold;
+
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 7px;
+        padding: 2px 12px;
+
+        .statInfo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .statText {
+                color: #A24ADB;
+                font-size: 11px;
+                font-weight: 700;
+                border-bottom: 2px solid #A24ADB;
+            }
+        }
+
+
+    }
+}

@@ -1,0 +1,459 @@
+.shopRegist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+
+  .registContainer {
+    width: 700px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    box-shadow: 0px 5px 6px 2px rgba(0, 0, 0, 0.55);
+    -webkit-box-shadow: 0px 5px 6px 2px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 0px 5px 6px 2px rgba(0, 0, 0, 0.55);
+
+    .regFirst {
+      padding: 20px 0;
+      background: rgb(255,255,255);
+      background: linear-gradient(0deg, rgba(255,255,255,1) 26%, rgba(234,221,243,1) 100%);
+
+      .imgBox {
+        background-color: rgb(233, 233, 233);
+        width: 400px;
+        height: fit-content;
+        max-width: 90%;
+        height: 100px;
+        border-radius: 5px;
+        padding: 12px 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+
+        box-shadow: 0px 3px 4px 2px rgba(0,0,0,0.42);
+        -webkit-box-shadow: 0px 3px 4px 2px rgba(0,0,0,0.42);
+        -moz-box-shadow: 0px 3px 4px 2px rgba(0,0,0,0.42);
+      }
+    }
+
+    .regSecond {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .descBox {
+        background-color: #EADDF3;
+        border-radius: 5px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px 0;
+        margin: 5px 0;
+        gap: 5px;
+
+        .tagForm {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .tagLimit {
+          .errMes {
+            background-color: #e91931;
+            color: white;
+            border-radius: 22px;
+            padding: 2px 12px;
+          }
+        }
+      }
+
+      .input {
+        border: none;
+        width: 98%;
+        height: 28px;
+        background-color: white;
+        border-radius: 3px;
+
+        &.desc {
+          resize: vertical;
+          min-height: 40px;
+          max-height: 150px;
+
+          &::-webkit-scrollbar {
+            width: 9px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: #be9ada;
+            border-radius: 10px;
+            background-clip: padding-box;
+            border: 2px solid transparent;
+          }
+
+          &::-webkit-scrollbar-track {
+            background-color: lightgray;
+            border-radius: 10px;
+            box-shadow: inset 0px 0px 5px white;
+          }
+        }
+      }
+
+      .tags {
+        width: 98%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3px;
+
+        .tag {
+          background-color: #B25FF3;
+          color: white;
+          padding: 3px 6px;
+          border-radius: 5px;
+          cursor: pointer;
+
+          width: fit-content;
+          overflow: hidden;
+
+          &:hover {
+            background-color: #442F55;
+            text-decoration: line-through;
+          }
+        }
+      }
+
+      .selectBox {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 90%;
+        justify-content: space-between;
+        margin: 4px 0;
+
+        .selectTitle {
+          font-size: 15px;
+          width: 20%;
+          text-indent: 10px;
+          font-weight: bold;
+        }
+
+        .selectArea {
+          width: 78%;
+          display: flex;
+          flex-direction: row;
+          gap: 7px;
+
+          .selectComponent {
+            cursor: pointer;
+            width: fit-content;
+            padding: 0px 15px;
+            height: 34px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            background-color: white;
+            color: gray;
+            transition: background-color 0.15s ease;
+
+            &:hover {
+              background-color: rgb(243, 243, 243);
+            }
+
+            &.selected {
+              border: 2px solid #B25FF3;
+              color: #442F55;
+              text-shadow: 0px 0px 2px #d3b7e9;
+            }
+          }
+        }
+      }
+    }
+
+    .regThrid {
+      background-color: #EADDF3;
+      width: 90%;
+      margin: 0 auto;
+      border-radius: 7px;
+
+      .uploadCategoryBtns {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        padding: 7px 0;
+        gap: 4px;
+
+        .uploadType {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          color: #B25FF3;
+          font-size: 15px;
+          font-weight: bold;
+          gap: 4px;
+          width: 120px;
+          height: 40px;
+          border-radius: 5px;
+          border: none;
+          background-color: white;
+          cursor: pointer;
+          transition: background-color 0.15s ease;
+
+          &:hover {
+            background-color: rgb(243, 243, 243);
+          }
+
+          &.selected {
+            background-color: #B25FF3;
+            color: white;
+
+            &:hover {
+              background-color: #442F55;
+            }
+          }
+        }
+      }
+
+      .uploadOption {
+        width: 98%;
+        background-color: rgb(233, 233, 233);
+        border-radius: 7px;
+        margin: 5px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 0;
+
+        .tab {
+          width: 90%;
+
+          .tabDesc {
+            padding: 10px 0;
+          }
+
+          .lineInput {
+            border: none;
+            padding: 2px;
+            border-radius: 5px;
+            margin: 0 3px;
+
+            &::placeholder {
+              color: #a8a8a8;
+            }
+          }
+
+          .tabBtns {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .line {
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-end;
+              align-items: center;
+              width: 100%;
+
+              .title {
+                width: 20%;
+                font-size: 14px;
+                color: #B25FF3;
+                font-weight: bold;
+              }
+
+              .lineInput {
+                width: 30%;
+                text-align: end;
+              }
+            }
+
+            .take {
+              width: 100%;
+              padding: 5px 0;
+
+              .title {
+                font-size: 14px;
+                color: gray;
+                margin-bottom: 7px;
+                display: flex;
+                align-items: center;
+                gap: 2px;
+              }
+
+              .takeBox {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+
+                .btn {
+                  width: fit-content;
+                  height: fit-content;
+                  padding: 6px 14px;
+                  border-radius: 22px;
+                  background-color: white;
+                  color: #B25FF3;
+                  font-weight: bold;
+                  border: 1px solid #B25FF3;
+
+                  &:hover {
+                    background-color: lightgray;
+                  }
+
+                  &.selected {
+                    color: white;
+                    background-color: #B25FF3;
+
+                    &:hover {
+                      background-color: #442F55;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    .regFourth {
+      .warningBox {
+        background-color: white;
+        border-radius: 7px;
+        padding: 10px;
+        margin: 15px auto;
+        width: 85%;
+      }
+    }
+
+    .regFifth {
+      width: 80%;
+      margin: 10px auto;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+
+      .btn {
+        display: flex;
+        gap: 4px;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 0 20px;
+        border-radius: 24px;
+      }
+    }
+
+    .btn {
+      height: 35px;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      border: none;
+      border-radius: 7px;
+      background-color: #B25FF3;
+      color: white;
+      font-size: 13px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #442F55;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .shopRegist {
+    .registContainer {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .shopRegist {
+    .registContainer {
+      width: 100%;
+      max-width: 500px;
+
+      .regSecond {
+        display: flex;
+        justify-content: center;
+
+        .input {
+          width: 96%;
+        }
+
+        .selectBox {
+          gap: 4px;
+          margin: 5px auto;
+          flex-direction: column;
+          align-items: start;
+
+          .selectTitle {
+            width: 100%;
+            text-indent: 2px;
+          }
+
+          .selectArea {
+            width: 100%;
+            margin-left: 3px;
+            .selectComponent {
+              padding: 0px 10px;
+            }
+          }
+        }
+      }
+
+      .regThrid {
+        .uploadCategoryBtns {
+          .uploadType {
+            flex-direction: column;
+            font-size: 12px;
+            width: 80px;
+            height: 60px;
+          }
+        }
+
+        .uploadOption {
+          .tab {
+            .tabBtns {
+              .line {
+                .title {
+                  min-width:fit-content;
+                }
+              }
+
+              .take {
+                .takeBox {
+                  flex-wrap: wrap;
+                  gap: 4px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
