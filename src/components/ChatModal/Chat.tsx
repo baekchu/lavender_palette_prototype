@@ -1,14 +1,20 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import Sidebar from './Sidebar.tsx';
-import ChatBody from './ChatBody.tsx';
-import authState from 'components/zustand/AuthState.tsx';
+import React, { useState, useEffect, useMemo, SetStateAction } from 'react';
+import Sidebar from './Sidebar';
+import ChatBody from './ChatBody';
+import authState from '../../../zustand/AuthState'
 
 import './Chat.css';
 
-const ChatModal: React.FC = () => {
+interface ChatModalProps {
+    chatModalOpen : boolean,
+    setChatModalOpen : React.Dispatch<React.SetStateAction<boolean>>,
+}
+
+const ChatModal: React.FC<ChatModalProps> = ({
+    chatModalOpen, setChatModalOpen
+}) => {
 
     /** 모달 창 출력 관리 */
-    const [chatModalOpen, setChatModalOpen] = useState<boolean>(true);
 
     /** 사이드바 출력 관리 */
     const [openSidebar, setOpenSidebar] = useState(true);
@@ -21,19 +27,6 @@ const ChatModal: React.FC = () => {
     // useMemo를 사용하여 user 상태를 캐싱
     const { isLoggedIn, user, login, logout } = authState();
     const cachedUser = useMemo(() => user, [user]);
-
-    // 유저 상태 변경 시 업로드, 임시 작성 영역 수정 필요
-    useEffect(() => {
-        if (!isLoggedIn) {
-            login({
-                email: 'Jane@test.com',
-                image: "https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/201909/20/xportsnews/20190920191438775cnhj.jpg",
-                nickname: 'Jane',
-                uid: '0JYWxdeIDCPrr78nab8LZ38yh3u1'
-            });
-        }
-        console.log(user);
-    }, [isLoggedIn, login]);
 
 
     /************* 모달 창 이동에 대한 함수들   *************/

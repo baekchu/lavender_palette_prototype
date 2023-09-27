@@ -6,8 +6,8 @@ import { PiHandbagBold } from "react-icons/pi";
 export const NavLinks = [
     { href: '/', key: 'Home', text: 'Home' , icon: <HiOutlineHome /> },
     { href: '/quest', key: '탐색', text: '탐색', icon: <MdManageSearch />},
-    { href: '/', key: '의뢰', text: '의뢰', icon: <MdOutlineSmsFailed />},
-    { href: '/', key: '디자인샵', text: '디자인샵', icon: <PiHandbagBold /> },
+    { href: '/request', key: '의뢰', text: '의뢰', icon: <MdOutlineSmsFailed />},
+    { href: '/shop', key: '디자인샵', text: '디자인샵', icon: <PiHandbagBold /> },
 ];
 //홈화면 카테고리
 export const exploreWorlds = [

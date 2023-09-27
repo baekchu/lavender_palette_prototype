@@ -1,20 +1,20 @@
 "use client";
 
-import ArtworkRegist from "@/components/ArtworkRegist/ArtworkRegist";
 import { Metadata } from "next";
+import ShopMain from '../../../src/components/DesignShop/ShopMain';
 
 export const metadata: Metadata = {
   title: "LavenderPalette",
 };
 
-const Quest = () => {
+const Shop = () => {
   return (
     <section className="flex justify-center">
       <div className="mt-5">
-        <ArtworkRegist registType={1}/>
+        <ShopMain />
       </div>
     </section>
   );
 };
 
-export default Quest;
+export default Shop;

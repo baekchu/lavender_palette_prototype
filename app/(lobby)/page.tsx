@@ -13,11 +13,13 @@ const Home = () => {
     <section className="flex-start flex-col mb-16">
       <div className="bg-gradient-to-tr from-white via-transparent to-purple-300">
         <Slider />
+        {/**
         <About />
         <Explore />
         <Popularity />
         <Quest/>
         <Request/>
+         */}
       </div>
     </section>
   );

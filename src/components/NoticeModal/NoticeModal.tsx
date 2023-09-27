@@ -9,16 +9,18 @@ import CloseIcon from '@mui/icons-material/Close';
  */
 
 interface noticeModalProps {
-    IsNoticeModalOpen: boolean;
-    type: 'message' | 'alerm';
+    type: 'message' | 'alerm',
+    chatModalOpen : boolean,
+    setChatModalOpen : React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-const NoticeModal: React.FC<noticeModalProps> = ({ type }) => {
-    const [modalOpen, setModalOpen] = useState(true);
+const NoticeModal: React.FC<noticeModalProps> = ({ 
+    type, chatModalOpen, setChatModalOpen
+ }) => {
 
     return (
         <>
-            {modalOpen && (<div className="notice">
+            {chatModalOpen && (<div className="notice">
                 <div className="noticeTop">
                     <div className="noticeNav">
                         <div className="modalName">
@@ -27,7 +29,7 @@ const NoticeModal: React.FC<noticeModalProps> = ({ type }) => {
                         </div>
                         <div className="modalBtns">
                             <button
-                                onClick={() => (setModalOpen(false))}
+                                onClick={() => (setChatModalOpen(false))}
                                 className="close">
                                 <CloseIcon sx={{ fontSize: '16px' }} />
                             </button>

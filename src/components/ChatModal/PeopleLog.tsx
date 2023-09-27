@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import ChatUser from './ChatUser.tsx';
+import ChatUser from './ChatUser.jsx';
 import SearchIcon from '@mui/icons-material/Search';
-import { db } from '../../Firebase/firebaseConfig.js';
+import { db } from '../../../Firebase/firebaseConfig.js';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
 interface User {

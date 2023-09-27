@@ -1,7 +1,7 @@
 import React from 'react';
-import BodyNav from './BodyNav.tsx';
-import ChatLog from './ChatLog.tsx';
-import Input from './Input.tsx';
+import BodyNav from './BodyNav';
+import ChatLog from './ChatLog';
+import Input from './Input';
 
 interface User {
     email: string | null;

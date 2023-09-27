@@ -3,6 +3,8 @@ import AttachFileIcon from '@mui/icons-material/AttachFile';
 import ImageIcon from '@mui/icons-material/Image';
 import SendIcon from '@mui/icons-material/Send';
 
+import { db } from '@/Firebase/firebaseConfig';
+
 const Input: React.FC = () => {
     // 텍스트 입력값
     const [inputText, setInputText] = useState<string>("");
@@ -26,6 +28,15 @@ const Input: React.FC = () => {
         console.log(inputText);
         setInputText("");
     };
+
+
+    // 서버에 메세지 등록 9/22 수정
+    interface MessageProps {
+        text: string,
+        uid: string,
+        attUrl: string | null,
+    }
+
 
     return (
         <form
