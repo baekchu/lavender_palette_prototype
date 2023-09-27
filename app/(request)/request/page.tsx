@@ -1,20 +1,20 @@
 "use client";
 
-import ArtworkRegist from "@/components/ArtworkRegist/ArtworkRegist";
 import { Metadata } from "next";
+import RequestMain from '../../../src/components/Request/ReqMain'
 
 export const metadata: Metadata = {
   title: "LavenderPalette",
 };
 
-const Quest = () => {
+const Request = () => {
   return (
     <section className="flex justify-center">
       <div className="mt-5">
-        <ArtworkRegist registType={1}/>
+        <RequestMain />
       </div>
     </section>
   );
 };
 
-export default Quest;
+export default Request;

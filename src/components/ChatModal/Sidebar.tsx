@@ -1,6 +1,6 @@
 import React from 'react';
-import ChatNav from './ChatNav.tsx';
-import PeopleLog from './PeopleLog.tsx';
+import ChatNav from './ChatNav';
+import PeopleLog from './PeopleLog';
 
 interface User {
     email: string | null;

@@ -1,21 +1,26 @@
 "use client";
+/** 알람, 메세지, 로그인 폼에 대한 코드 */
 
 import React, { useCallback, useState, useEffect } from "react";
 import { PiBellSimpleDuotone, PiEnvelopeDuotone } from "react-icons/pi";
 import { GiHamburgerMenu } from "react-icons/gi";
-import authState from "@/components/zustand/AuthState";
+import authState from "@/zustand/AuthState";
+import { useRouter } from 'next-navigation';
 
 import Avatar from "../Avatar";
 import MenuItem from "./MenuItem";
 import useRegisterModal from "../hooks/useRegisterModal";
 import useLoginModal from "../hooks/useLoginModal";
 
+import Notice from '@/src/components/NoticeModal/NoticeModal';
+import Chat from '@/src/components/ChatModal/Chat';
+
 const UserMenu = () => {
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
   const [isOpen, setIsOpen] = useState(false);
   const auth = authState();
-  
+  const navigation = useRouter();
 
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
@@ -25,12 +30,31 @@ const UserMenu = () => {
     toggleOpen(); // Close the menu when a MenuItem is clicked
   };
 
-  
+  // 알림창 출력
+  const [isNoticeOpen, setIsNoticeOpen] = useState<boolean>(false);
+
+  // 채팅창 출력
+  const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
+
+
   return (
-    <div className="relative">
-      <div className="flex flex-row items-center xs:gap-3 gap-1">
-        <button
-          className="
+    <>
+      <Notice
+        type={'alerm'}
+        chatModalOpen={isNoticeOpen}
+        setChatModalOpen={setIsNoticeOpen}
+      />
+
+      <Chat
+        chatModalOpen={isChatOpen}
+        setChatModalOpen={setIsChatOpen}
+      />
+
+      <div className="relative">
+        <div className="flex flex-row items-center xs:gap-3 gap-1">
+          <button
+            // 알림 버튼
+            className="
           block
           text-xl
           font-semibold 
@@ -42,11 +66,13 @@ const UserMenu = () => {
           cursor-pointer
           text-primary-purple
         "
-        >
-          <PiBellSimpleDuotone />
-        </button>
-        <button
-          className="
+            onClick={() => { setIsNoticeOpen(!isNoticeOpen); }}
+          >
+            <PiBellSimpleDuotone />
+          </button>
+          <button
+            // 메세지 버튼
+            className="
             block
             text-[1.4rem]
             font-semibold 
@@ -58,12 +84,13 @@ const UserMenu = () => {
             cursor-pointer
             text-primary-purple
           "
-        >
-          <PiEnvelopeDuotone />
-        </button>
-        <div
-          onClick={toggleOpen}
-          className="
+            onClick={() => { setIsChatOpen(!isChatOpen); }}
+          >
+            <PiEnvelopeDuotone />
+          </button>
+          <div
+            onClick={toggleOpen}
+            className="
           xs:p-2
           p-1
           md:py-1
@@ -79,24 +106,24 @@ const UserMenu = () => {
           hover:shadow-md 
           transition
           "
-        >
-          <div className="hidden md:block">
-            <Avatar src={auth?.user?.image} />
-          </div>
-          <div className=" text-[#96BFEE] flex-row items-center text-xl">
-            {auth?.isLoggedIn ? (
-              <GiHamburgerMenu />
-            ) : (
-              <div className=" text-[#96BFEE] flex-row items-center xs:text-sm text-[5px] font-semibold ">
-                로그인
-              </div>
-            )}
+          >
+            <div className="hidden md:block">
+              <Avatar src={auth?.user?.profImg} />
+            </div>
+            <div className=" text-[#96BFEE] flex-row items-center text-xl">
+              {auth?.isLoggedIn ? (
+                <GiHamburgerMenu />
+              ) : (
+                <div className=" text-[#96BFEE] flex-row items-center xs:text-sm text-[5px] font-semibold ">
+                  로그인
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-      {isOpen && (
-        <div
-          className="
+        {isOpen && (
+          <div
+            className="
             z-[10]
             absolute 
             rounded-xl 
@@ -110,48 +137,49 @@ const UserMenu = () => {
             top-18
             text-sm
           "
-        >
-          <div className="flex flex-col cursor-pointer">
-            {auth?.isLoggedIn ? (
-              <>
-                <MenuItem label="마이 페이지" onClick={() => {}} />
-                <MenuItem label="My favorites" onClick={() => {}} />
-                <MenuItem label="My reservations" onClick={() => {}} />
-                <MenuItem label="My properties" onClick={() => {}} />
-                <MenuItem label="Airbnb your home" onClick={() => {}} />
-                <hr className="border-b-[0.5px] border-[#e8dbf2]" />
-                <MenuItem
-                  label="로그아웃"
-                  onClick={() => {
-                    auth?.logout();
-                    handleMenuItemClick();
-                  }}
-                />
-              </>
-            ) : (
-              <>
-                <div className="text-red-500">
+          >
+            <div className="flex flex-col cursor-pointer">
+              {auth?.isLoggedIn ? (
+                <>
+                  <MenuItem label="마이 페이지" onClick={() => {navigation.push("./myPage")}} />
+                  <MenuItem label="My favorites" onClick={() => { }} />
+                  <MenuItem label="My reservations" onClick={() => { }} />
+                  <MenuItem label="My properties" onClick={() => { }} />
+                  <MenuItem label="Airbnb your home" onClick={() => { }} />
+                  <hr className="border-b-[0.5px] border-[#e8dbf2]" />
                   <MenuItem
-                    label="회원가입"
+                    label="로그아웃"
                     onClick={() => {
-                      registerModal.onOpen();
+                      auth?.logout();
                       handleMenuItemClick();
                     }}
                   />
-                </div>
-                <MenuItem
-                  label="로그인"
-                  onClick={() => {
-                    loginModal.onOpen();
-                    handleMenuItemClick();
-                  }}
-                />
-              </>
-            )}
+                </>
+              ) : (
+                <>
+                  <div className="text-red-500">
+                    <MenuItem
+                      label="회원가입"
+                      onClick={() => {
+                        registerModal.onOpen();
+                        handleMenuItemClick();
+                      }}
+                    />
+                  </div>
+                  <MenuItem
+                    label="로그인"
+                    onClick={() => {
+                      loginModal.onOpen();
+                      handleMenuItemClick();
+                    }}
+                  />
+                </>
+              )}
+            </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 };
 
