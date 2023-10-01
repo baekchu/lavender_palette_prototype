@@ -5,7 +5,7 @@ import React, { useCallback, useState, useEffect } from "react";
 import { PiBellSimpleDuotone, PiEnvelopeDuotone } from "react-icons/pi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import authState from "@/zustand/AuthState";
-import { useRouter } from 'next-navigation';
+import { useRouter } from 'next/navigation';
 
 import Avatar from "../Avatar";
 import MenuItem from "./MenuItem";

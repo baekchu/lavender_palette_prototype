@@ -19,11 +19,8 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/config/firebase";
 import IconButton from "../button/IconButton";
 
-import authState from "../zustand/AuthState";
+import authState from "@/zustand/AuthState";
 
-interface User {
-  email: string;
-}
 
 const LoginModal = () => {
   const router = useRouter();
@@ -55,10 +52,8 @@ const LoginModal = () => {
         console.log(userCredential);
         toast.success(`로그인되었습니다.`);
 
-        const newUser: User = {
-          email: userCredential.user.email || "",
-        };
-        userAuth.login(newUser);
+        const user = userCredential.user;
+        userAuth.login(user.uid);
 
         loginModal.onClose();
       })

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Message from './Message.jsx';
+import Message from './Message';
 
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import ImageIcon from '@mui/icons-material/Image';
